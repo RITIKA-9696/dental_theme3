@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Mint &amp; Moss Dental Co.</title>
+<meta name="description" content="Gentle, modern dental services at Mint & Moss — from general dentistry and whitening to implants, aligners and pediatric care.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+<style>
+/* ============================================
+   TOKENS
+=============================================== */
+:root{
+  --moss:#2F4A3C;
+  --moss-deep:#1F3329;
+  --moss-light:#3D5E4C;
+  --sage:#8FA68E;
+  --mint:#D4E8DC;
+  --mint-soft:#E8F2EC;
+  --mint-glow:#F0F7F2;
+  --terracotta:#D89B7C;
+  --terracotta-soft:#F0C7AE;
+  --cream:#F8F5EE;
+  --ivory:#FDFCF8;
+  --ink:#1F2A24;
+  --muted:#7A8B7F;
+  --line:rgba(47,74,60,.12);
+
+  --font-display:'Fraunces', serif;
+  --font-body:'Sora', sans-serif;
+
+  --ease:cubic-bezier(.4,0,.2,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+
+  --container:1280px;
+  --radius-sm:12px;
+  --radius:20px;
+  --radius-lg:32px;
+  --radius-pill:999px;
+
+  --shadow-sm:0 4px 14px rgba(47,74,60,.06);
+  --shadow:0 12px 30px rgba(47,74,60,.08);
+  --shadow-lg:0 30px 60px rgba(47,74,60,.12);
+  --shadow-xl:0 50px 100px rgba(47,74,60,.15);
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; -webkit-font-smoothing:antialiased; }
+body{ font-family:var(--font-body); color:var(--ink); background:var(--ivory); overflow-x:hidden; line-height:1.7; font-size:15.5px; font-weight:400; letter-spacing:-0.005em; }
+img{ max-width:100%; display:block; }
+a{ text-decoration:none; color:inherit; }
+ul{ list-style:none; }
+button{ font-family:inherit; cursor:pointer; border:none; background:none; }
+
+.wrap{ max-width:var(--container); margin:0 auto; padding:0 40px; }
+
+h1,h2,h3,h4,h5{ font-family:var(--font-display); font-weight:400; line-height:1.1; color:var(--moss); letter-spacing:-0.02em; font-variation-settings:'SOFT' 100, 'WONK' 1; }
+h1{ font-weight:500; }
+
+section{ position:relative; }
+
+@media (prefers-reduced-motion: reduce){ *{ animation-duration:.001ms !important; transition-duration:.001ms !important; scroll-behavior:auto !important; } }
+::selection{ background:var(--mint); color:var(--moss); }
+::-webkit-scrollbar{ width:8px; }
+::-webkit-scrollbar-track{ background:var(--cream); }
+::-webkit-scrollbar-thumb{ background:var(--sage); border-radius:8px; }
+
+/* ============================================
+   BUTTONS
+=============================================== */
+.btn{
+  position:relative; display:inline-flex; align-items:center; gap:10px;
+  padding:16px 32px; font-family:var(--font-body); font-weight:500;
+  font-size:.85rem; color:var(--ivory); background:var(--moss);
+  border-radius:var(--radius-pill); overflow:hidden;
+  isolation:isolate; cursor:pointer;
+  transition:transform .4s var(--ease), box-shadow .4s var(--ease);
+  box-shadow:0 4px 14px rgba(47,74,60,.18);
+}
+.btn span, .btn i{ position:relative; z-index:2; transition:color .4s var(--ease); }
+.btn i{ font-size:.75rem; transition:transform .4s var(--ease), color .4s var(--ease); }
+.btn::before{ content:''; position:absolute; inset:auto 0 0 0; height:0; background:var(--terracotta); z-index:1; transition:height .5s var(--ease-out); }
+.btn:hover{ transform:translateY(-2px); box-shadow:0 14px 30px rgba(47,74,60,.25); }
+.btn:hover::before{ height:100%; }
+.btn:hover i{ transform:translateX(4px); }
+.btn-outline{ background:transparent; color:var(--moss); border:1.5px solid var(--moss); box-shadow:none; }
+.btn-outline::before{ background:var(--moss); }
+.btn-outline:hover{ color:var(--ivory); }
+.btn-mint{ background:var(--mint); color:var(--moss); box-shadow:none; }
+.btn-mint::before{ background:var(--moss); }
+.btn-mint:hover{ color:var(--ivory); }
+
+.arrow-link{
+  display:inline-flex; align-items:center; gap:10px;
+  color:var(--moss); font-weight:500; font-size:.9rem;
+  padding-bottom:4px; position:relative;
+  transition:color .3s;
+}
+.arrow-link::after{
+  content:''; position:absolute; left:0; bottom:0; right:0;
+  height:1.5px; background:var(--sage);
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .5s var(--ease-out);
+}
+.arrow-link i{ font-size:.8rem; transition:transform .4s var(--ease); }
+.arrow-link:hover{ color:var(--terracotta); }
+.arrow-link:hover::after{ transform:scaleX(1); background:var(--terracotta); }
+.arrow-link:hover i{ transform:translateX(5px); }
+
+/* ============================================
+   LOGO
+=============================================== */
+.logo{
+  display:flex; align-items:center; gap:11px;
+  font-family:var(--font-display); font-size:1.3rem;
+  font-weight:600; color:var(--moss); letter-spacing:-0.02em;
+}
+.logo-mark{
+  width:38px; height:38px; border-radius:50%;
+  background:var(--mint); color:var(--moss);
+  display:flex; align-items:center; justify-content:center;
+  transition:all .4s var(--ease); position:relative; overflow:hidden;
+}
+.logo-mark::before{ content:''; position:absolute; inset:0; background:var(--moss); border-radius:50%; transform:scale(0); transition:transform .5s var(--ease-out); }
+.logo-mark i{ position:relative; z-index:2; font-size:1rem; transition:color .4s var(--ease); }
+.logo:hover .logo-mark::before{ transform:scale(1); }
+.logo:hover .logo-mark i{ color:var(--mint); }
+.logo em{ font-style:italic; font-weight:300; color:var(--sage); }
+
+/* ============================================
+   HEADER
+=============================================== */
+header{ position:fixed; inset:0 0 auto 0; z-index:1000; padding:20px 0; transition:all .45s var(--ease); }
+header .wrap{ display:flex; align-items:center; justify-content:space-between; gap:30px; }
+nav.main-nav ul{ display:flex; gap:4px; align-items:center; }
+nav.main-nav a{ color:var(--moss); font-size:.88rem; font-weight:500; padding:10px 18px; border-radius:var(--radius-pill); transition:background .35s var(--ease), color .35s var(--ease); }
+nav.main-nav a:hover{ background:var(--mint-soft); }
+nav.main-nav a.active{ background:var(--moss); color:var(--ivory); }
+.header-right{ display:flex; align-items:center; gap:14px; }
+.icon-btn{ color:var(--moss); font-size:1rem; cursor:pointer; width:42px; height:42px; border-radius:50%; background:var(--mint-soft); display:flex; align-items:center; justify-content:center; transition:all .35s var(--ease); }
+.icon-btn:hover{ background:var(--mint); transform:translateY(-2px); }
+.burger{ display:none; flex-direction:column; gap:5px; cursor:pointer; padding:10px; }
+.burger span{ width:24px; height:2px; background:var(--moss); border-radius:2px; transition:.3s; }
+header.scrolled{ background:rgba(253,252,248,.85); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); padding:12px 0; box-shadow:0 8px 24px rgba(47,74,60,.06); border-bottom:1px solid var(--line); }
+
+/* ============================================
+   MOBILE NAV
+=============================================== */
+.mobile-nav{ position:fixed; inset:0; z-index:1500; background:var(--moss); color:var(--ivory); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; transform:translateY(-100%); transition:transform .55s var(--ease-out); visibility:hidden; }
+.mobile-nav.open{ transform:translateY(0); visibility:visible; }
+.mobile-nav a{ color:var(--ivory); font-family:var(--font-display); font-size:1.9rem; font-weight:400; padding:8px 20px; border-radius:var(--radius-pill); transition:background .3s; }
+.mobile-nav a:hover, .mobile-nav a.active{ background:var(--mint); color:var(--moss); }
+.mobile-nav .btn{ font-family:var(--font-body); margin-top:14px; font-size:.82rem; }
+.mobile-close{ position:absolute; top:24px; right:28px; width:46px; height:46px; border-radius:50%; background:rgba(212,232,220,.15); color:var(--ivory); display:flex; align-items:center; justify-content:center; font-size:1.2rem; cursor:pointer; transition:all .3s var(--ease); }
+.mobile-close:hover{ background:var(--mint); color:var(--moss); }
+
+/* ============================================
+   PAGE HERO — Light, calm
+=============================================== */
+.page-hero{
+  padding:170px 0 100px;
+  background:var(--cream);
+  position:relative;
+  overflow:hidden;
+}
+.page-hero-blob{
+  position:absolute; border-radius:50%;
+  filter:blur(60px); pointer-events:none; z-index:0;
+}
+.page-hero-blob.pb-1{
+  top:-10%; right:-5%; width:640px; height:640px;
+  background:radial-gradient(circle, var(--mint) 0%, transparent 65%);
+  opacity:.9;
+}
+.page-hero-blob.pb-2{
+  bottom:-10%; left:-12%; width:520px; height:520px;
+  background:radial-gradient(circle, var(--terracotta-soft) 0%, transparent 70%);
+  opacity:.5;
+}
+.hero-leaf{
+  position:absolute; color:var(--sage); opacity:.3;
+  z-index:1; pointer-events:none;
+}
+.hero-leaf.l-1{ top:22%; left:4%; font-size:1.6rem; animation:floatLeaf 6s ease-in-out infinite; }
+.hero-leaf.l-2{ top:68%; left:8%; font-size:1.1rem; animation:floatLeaf 7s ease-in-out infinite .5s; }
+.hero-leaf.l-3{ top:14%; right:6%; font-size:1.4rem; animation:floatLeaf 8s ease-in-out infinite 1s; }
+.hero-leaf.l-4{ bottom:22%; right:3%; font-size:1.8rem; animation:floatLeaf 9s ease-in-out infinite 1.5s; }
+@keyframes floatLeaf{
+  0%,100%{ transform:translateY(0) rotate(0deg); }
+  50%{ transform:translateY(-20px) rotate(8deg); }
+}
+.page-hero .wrap{ position:relative; z-index:3; }
+.page-hero-grid{
+  display:grid; grid-template-columns:1.05fr 1fr;
+  gap:70px; align-items:center;
+}
+.breadcrumb{
+  display:inline-flex; align-items:center; gap:10px;
+  font-size:.8rem; padding:8px 16px;
+  background:var(--ivory); border-radius:var(--radius-pill);
+  box-shadow:var(--shadow-sm); margin-bottom:24px;
+  animation:fadeUp .8s var(--ease-out) .05s both;
+}
+.breadcrumb a{ color:var(--muted); transition:color .3s; font-weight:500; }
+.breadcrumb a:hover{ color:var(--terracotta); }
+.breadcrumb i{ color:var(--sage); font-size:.65rem; }
+.breadcrumb span{ color:var(--moss); font-weight:600; }
+
+.hero-eyebrow{
+  display:inline-flex; align-items:center; gap:10px;
+  font-size:.78rem; font-weight:500;
+  color:var(--moss); background:var(--ivory);
+  padding:10px 18px; border-radius:var(--radius-pill);
+  margin-bottom:26px; box-shadow:var(--shadow-sm);
+  animation:fadeUp .8s var(--ease-out) .12s both;
+}
+.hero-eyebrow .dot{
+  width:8px; height:8px; border-radius:50%;
+  background:var(--terracotta);
+  box-shadow:0 0 0 3px rgba(216,155,124,.25);
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{ box-shadow:0 0 0 3px rgba(216,155,124,.25); }
+  50%{ box-shadow:0 0 0 6px rgba(216,155,124,.1); }
+}
+.hero-title{
+  font-size:clamp(2.4rem, 5vw, 4.2rem);
+  line-height:1.05; letter-spacing:-0.03em;
+  font-weight:400; color:var(--moss);
+  margin-bottom:26px;
+  animation:fadeUp .9s var(--ease-out) .22s both;
+}
+.hero-title em{
+  font-style:italic; font-weight:500;
+  color:var(--terracotta);
+  position:relative; display:inline-block;
+}
+.hero-title .underline-squiggle{
+  position:relative; display:inline-block;
+}
+.hero-title .underline-squiggle::after{
+  content:''; position:absolute;
+  left:0; right:0; bottom:0.05em; height:0.22em;
+  background:var(--mint); border-radius:999px;
+  z-index:-1;
+}
+.hero-text{
+  color:var(--muted); font-size:1.05rem;
+  line-height:1.75; max-width:520px;
+  margin-bottom:36px;
+  animation:fadeUp .9s var(--ease-out) .38s both;
+}
+.hero-cta{
+  display:flex; gap:14px; flex-wrap:wrap;
+  animation:fadeUp .9s var(--ease-out) .52s both;
+  margin-bottom:44px;
+}
+.hero-stats{
+  display:flex; gap:36px; flex-wrap:wrap;
+  padding-top:32px; border-top:1px solid var(--line);
+  animation:fadeUp .9s var(--ease-out) .66s both;
+}
+.hero-stat span:first-child{
+  display:block; font-family:var(--font-display);
+  font-size:1.9rem; font-weight:500; color:var(--moss);
+  line-height:1; margin-bottom:4px;
+  letter-spacing:-0.02em;
+}
+.hero-stat span:first-child em{ font-style:italic; color:var(--terracotta); }
+.hero-stat span:last-child{
+  font-size:.78rem; color:var(--muted);
+  letter-spacing:.02em; font-weight:500;
+}
+
+/* Hero visual — layered */
+.hero-visual{
+  position:relative; height:600px;
+  animation:fadeUp 1s var(--ease-out) .38s both;
+}
+.hero-image-main{
+  position:absolute; top:40px; right:0;
+  width:78%; height:76%;
+  border-radius:50% 50% 50% 50% / 55% 55% 45% 45%;
+  overflow:hidden;
+  box-shadow:var(--shadow-xl);
+  z-index:2;
+}
+.hero-image-main img{ width:100%; height:100%; object-fit:cover; }
+.hero-image-secondary{
+  position:absolute; bottom:0; left:0;
+  width:52%; height:52%;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  border:8px solid var(--cream);
+  box-shadow:var(--shadow-lg);
+  z-index:3;
+}
+.hero-image-secondary img{ width:100%; height:100%; object-fit:cover; }
+.hero-circle{
+  position:absolute; top:0; right:12%;
+  width:180px; height:180px;
+  border:2px dashed rgba(47,74,60,.25);
+  border-radius:50%;
+  z-index:1;
+  animation:blobSpin 40s linear infinite;
+}
+@keyframes blobSpin{ to{ transform:rotate(360deg); } }
+.hero-badge{
+  position:absolute; top:6%; right:-4%;
+  background:var(--ivory); padding:16px 20px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-lg);
+  display:flex; align-items:center; gap:12px;
+  animation:floatY 4s ease-in-out infinite;
+  z-index:4;
+}
+.hero-badge-icon{
+  width:44px; height:44px; border-radius:14px;
+  background:var(--mint); color:var(--moss);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1rem;
+}
+.hero-badge-text strong{
+  display:block; font-family:var(--font-display);
+  font-size:1.05rem; color:var(--moss); font-weight:600;
+  line-height:1.1;
+}
+.hero-badge-text span{ font-size:.7rem; color:var(--muted); }
+.hero-badge-2{
+  position:absolute; bottom:10%; left:-8%;
+  background:var(--moss); color:var(--ivory);
+  padding:18px 22px; border-radius:var(--radius);
+  box-shadow:var(--shadow-xl);
+  animation:floatY2 5s ease-in-out infinite;
+  z-index:5;
+  max-width:230px;
+}
+.hero-badge-2 .founder{
+  display:flex; align-items:center; gap:10px;
+  margin-bottom:8px;
+}
+.hero-badge-2 .founder img{
+  width:34px; height:34px; border-radius:50%;
+  object-fit:cover; border:2px solid var(--mint);
+}
+.hero-badge-2 .founder span{
+  font-size:.72rem; color:var(--mint);
+  letter-spacing:.05em; font-weight:500;
+}
+.hero-badge-2 p{
+  font-family:var(--font-display); font-style:italic;
+  font-size:.88rem; line-height:1.4;
+  color:rgba(253,252,248,.9);
+}
+@keyframes fadeUp{
+  from{ opacity:0; transform:translateY(24px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+@keyframes floatY{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-14px); }
+}
+@keyframes floatY2{
+  0%,100%{ transform:translateY(0) rotate(-1deg); }
+  50%{ transform:translateY(-12px) rotate(1.5deg); }
+}
+.hero-curve{
+  position:absolute; bottom:-2px; left:0; right:0;
+  z-index:4; line-height:0; pointer-events:none;
+}
+.hero-curve svg{ width:100%; height:auto; display:block; }
+
+/* ============================================
+   SECTION HEAD
+=============================================== */
+.eyebrow{
+  display:inline-flex; align-items:center; gap:10px;
+  font-size:.75rem; letter-spacing:.06em; font-weight:600;
+  color:var(--terracotta); text-transform:uppercase;
+  padding:7px 16px; background:var(--terracotta-soft);
+  border-radius:var(--radius-pill); margin-bottom:22px;
+}
+.eyebrow.centered{ justify-content:center; }
+.eyebrow.mint{ color:var(--moss); background:var(--mint); }
+
+.section-head{ max-width:680px; margin-bottom:60px; }
+.section-head h2{
+  font-size:clamp(1.9rem, 3.4vw, 3rem);
+  font-weight:400; letter-spacing:-0.025em;
+  line-height:1.12; color:var(--moss);
+}
+.section-head h2 em{
+  font-style:italic; font-weight:500;
+  color:var(--terracotta);
+}
+.section-head p{
+  color:var(--muted); font-size:1.02rem; line-height:1.75;
+  margin-top:20px; max-width:600px;
+}
+.section-head.center{ margin-inline:auto; text-align:center; }
+.section-head.center p{ margin-inline:auto; }
+
+/* ============================================
+   SERVICES QUICK NAV
+=============================================== */
+.services-nav{
+  padding:0; background:var(--ivory);
+  position:sticky; top:80px; z-index:100;
+  border-bottom:1px solid var(--line);
+  margin-bottom:0;
+}
+.services-nav-inner{
+  display:flex; gap:8px; overflow-x:auto;
+  padding:20px 40px;
+  max-width:var(--container); margin:0 auto;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+}
+.services-nav-inner::-webkit-scrollbar{ display:none; }
+.services-nav-link{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 18px; border-radius:var(--radius-pill);
+  font-size:.82rem; font-weight:500; color:var(--moss);
+  white-space:nowrap;
+  transition:all .35s var(--ease);
+  border:1px solid var(--line);
+  background:var(--ivory);
+  cursor:pointer;
+}
+.services-nav-link:hover{
+  background:var(--mint-soft); border-color:var(--mint);
+  color:var(--moss);
+}
+.services-nav-link.active{
+  background:var(--moss); color:var(--ivory);
+  border-color:var(--moss);
+}
+.services-nav-link i{ font-size:.75rem; }
+
+/* ============================================
+   SERVICE DETAIL SECTIONS
+=============================================== */
+.service-detail{
+  padding:120px 0;
+  position:relative; overflow:hidden;
+}
+.service-detail:nth-child(odd){ background:var(--ivory); }
+.service-detail:nth-child(even){ background:var(--cream); }
+.service-detail::before{
+  content:''; position:absolute;
+  top:-10%; right:-10%; width:500px; height:500px;
+  background:radial-gradient(circle, var(--mint-soft) 0%, transparent 70%);
+  border-radius:50%; filter:blur(50px); opacity:.5;
+  pointer-events:none;
+}
+.service-detail.reverse::before{
+  right:auto; left:-10%;
+  background:radial-gradient(circle, var(--terracotta-soft) 0%, transparent 70%);
+  opacity:.35;
+}
+.service-detail .wrap{ position:relative; z-index:2; }
+.service-detail-grid{
+  display:grid; grid-template-columns:1fr 1.1fr;
+  gap:90px; align-items:center;
+}
+.service-detail.reverse .service-detail-grid{
+  grid-template-columns:1.1fr 1fr;
+}
+.service-detail.reverse .service-detail-media{ order:2; }
+.service-detail.reverse .service-detail-copy{ order:1; }
+
+/* Detail media */
+.service-detail-media{
+  position:relative; height:560px;
+}
+.service-detail-image{
+  position:absolute; inset:0;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  box-shadow:var(--shadow-xl);
+}
+.service-detail-image img{
+  width:100%; height:100%; object-fit:cover;
+  transition:transform 1s var(--ease-out);
+}
+.service-detail-media:hover .service-detail-image img{ transform:scale(1.04); }
+
+/* Decorative corner shape */
+.service-detail-media::before{
+  content:''; position:absolute;
+  top:-24px; left:-24px;
+  width:100px; height:100px;
+  border-top:2px solid var(--terracotta);
+  border-left:2px solid var(--terracotta);
+  border-radius:6px 0 0 0;
+  z-index:3;
+}
+.service-detail.reverse .service-detail-media::before{
+  left:auto; right:-24px;
+  border-left:none; border-right:2px solid var(--terracotta);
+  border-radius:0 6px 0 0;
+}
+
+/* Big number badge */
+.service-detail-num{
+  position:absolute; bottom:24px; right:24px;
+  width:80px; height:80px; border-radius:50%;
+  background:var(--moss); color:var(--mint);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-display); font-style:italic;
+  font-size:1.6rem; font-weight:500;
+  box-shadow:var(--shadow-lg);
+  z-index:4;
+  border:4px solid var(--ivory);
+}
+.service-detail.reverse .service-detail-num{
+  right:auto; left:24px;
+}
+
+/* Detail copy */
+.service-detail-copy .eyebrow{ margin-bottom:22px; }
+.service-detail-copy h2{
+  font-size:clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight:400; letter-spacing:-0.025em;
+  line-height:1.15; color:var(--moss);
+  margin-bottom:24px;
+}
+.service-detail-copy h2 em{
+  font-style:italic; font-weight:500;
+  color:var(--terracotta);
+}
+.service-detail-copy > p{
+  color:var(--muted); font-size:1.02rem;
+  line-height:1.8; margin-bottom:36px;
+}
+
+/* Features list */
+.service-features{ display:grid; gap:0; margin-bottom:38px; }
+.service-feature{
+  display:flex; gap:16px; align-items:flex-start;
+  padding:16px 0; border-bottom:1px solid var(--line);
+  font-size:.95rem; color:#2c2c2c; line-height:1.6;
+}
+.service-feature:first-child{ border-top:1px solid var(--line); }
+.service-feature-icon{
+  width:26px; height:26px; min-width:26px;
+  border-radius:8px;
+  background:var(--mint); color:var(--moss);
+  display:flex; align-items:center; justify-content:center;
+  font-size:.7rem; margin-top:1px;
+  transition:all .3s var(--ease);
+}
+.service-detail:hover .service-feature-icon{
+  background:var(--moss); color:var(--mint);
+}
+
+/* Meta info */
+.service-meta{
+  display:flex; gap:40px; margin-bottom:36px;
+  flex-wrap:wrap;
+  padding:24px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.service-meta-item span:first-child{
+  display:block; font-size:.68rem;
+  letter-spacing:.15em; text-transform:uppercase;
+  color:var(--muted); margin-bottom:6px;
+  font-weight:600;
+}
+.service-meta-item span:last-child{
+  display:block; font-family:var(--font-display);
+  font-size:1.15rem; font-weight:500;
+  color:var(--moss); font-style:italic;
+}
+
+/* ============================================
+   PROCESS SECTION
+=============================================== */
+.process-section{
+  padding:130px 0; background:var(--moss);
+  color:var(--ivory); position:relative; overflow:hidden;
+}
+.process-section::before{
+  content:''; position:absolute;
+  top:-20%; right:-10%; width:600px; height:600px;
+  background:radial-gradient(circle, rgba(212,232,220,.12), transparent 65%);
+  border-radius:50%; pointer-events:none;
+}
+.process-section::after{
+  content:''; position:absolute;
+  bottom:-15%; left:-5%; width:400px; height:400px;
+  background:radial-gradient(circle, rgba(216,155,124,.08), transparent 70%);
+  border-radius:50%; pointer-events:none;
+}
+.process-section .wrap{ position:relative; z-index:2; }
+.process-section .section-head h2{ color:var(--ivory); }
+.process-section .section-head h2 em{ color:var(--mint); }
+.process-section .section-head p{ color:rgba(253,252,248,.7); }
+.process-section .eyebrow{
+  background:rgba(212,232,220,.15); color:var(--mint);
+}
+.process-grid{
+  display:grid; grid-template-columns:repeat(4, 1fr); gap:20px;
+  position:relative;
+}
+.process-grid::before{
+  content:''; position:absolute;
+  top:58px; left:8%; right:8%; height:2px;
+  background:repeating-linear-gradient(90deg, rgba(212,232,220,.3) 0 8px, transparent 8px 16px);
+  z-index:0;
+}
+.process-step{
+  padding:34px 26px;
+  background:rgba(253,252,248,.05);
+  border:1px solid rgba(212,232,220,.15);
+  border-radius:var(--radius);
+  transition:all .5s var(--ease);
+  position:relative; z-index:1;
+  backdrop-filter:blur(4px);
+}
+.process-step:hover{
+  background:rgba(212,232,220,.1);
+  transform:translateY(-6px);
+  border-color:rgba(212,232,220,.35);
+  box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+.process-num{
+  width:56px; height:56px; border-radius:50%;
+  background:var(--mint); color:var(--moss);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-display); font-weight:600;
+  font-size:1.15rem; margin-bottom:24px;
+  transition:all .5s var(--ease);
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+.process-step:hover .process-num{
+  background:var(--terracotta); color:var(--ivory);
+  transform:scale(1.1) rotate(-8deg);
+}
+.process-step h4{
+  color:var(--ivory); font-size:1.15rem;
+  font-weight:500; margin-bottom:12px;
+  letter-spacing:-0.01em;
+}
+.process-step p{
+  color:rgba(253,252,248,.6); font-size:.92rem; line-height:1.7;
+}
+
+/* ============================================
+   FAQ SECTION
+=============================================== */
+.faq-section{ padding:130px 0; background:var(--ivory); position:relative; overflow:hidden; }
+.faq-section::before{
+  content:''; position:absolute;
+  top:20%; left:-10%; width:450px; height:450px;
+  background:radial-gradient(circle, var(--mint-soft) 0%, transparent 70%);
+  border-radius:50%; filter:blur(50px); opacity:.6;
+  pointer-events:none;
+}
+.faq-section .wrap{ position:relative; z-index:2; }
+.faq-grid{
+  display:grid; grid-template-columns:0.9fr 1.1fr;
+  gap:80px; align-items:start;
+}
+.faq-head .section-head{ margin-bottom:36px; }
+
+.faq-list{ display:grid; gap:0; }
+.faq-item{
+  background:var(--cream);
+  border-radius:var(--radius);
+  margin-bottom:12px;
+  border:1px solid var(--line);
+  overflow:hidden;
+  transition:all .4s var(--ease);
+}
+.faq-item.open{
+  box-shadow:var(--shadow);
+  background:var(--ivory);
+}
+.faq-q{
+  padding:24px 28px;
+  cursor:pointer;
+  display:flex; justify-content:space-between;
+  align-items:center; gap:20px;
+  font-family:var(--font-display); font-weight:500;
+  color:var(--moss); font-size:1.08rem;
+  letter-spacing:-0.01em;
+  transition:color .3s;
+}
+.faq-q:hover{ color:var(--terracotta); }
+.faq-q i{
+  color:var(--terracotta);
+  font-size:.85rem;
+  transition:transform .4s var(--ease);
+  flex-shrink:0;
+}
+.faq-item.open .faq-q i{ transform:rotate(45deg); }
+.faq-a{
+  max-height:0; overflow:hidden;
+  transition:max-height .45s var(--ease);
+}
+.faq-a p{
+  padding:0 28px 26px;
+  color:var(--muted); font-size:.95rem;
+  line-height:1.75;
+}
+
+/* ============================================
+   CTA SECTION
+=============================================== */
+.cta-section{ padding:100px 0 130px; background:var(--cream); position:relative; }
+.cta-card{
+  background:linear-gradient(135deg, var(--mint-soft), var(--mint));
+  border-radius:var(--radius-lg);
+  padding:80px 70px;
+  position:relative; overflow:hidden;
+  display:grid; grid-template-columns:1.4fr 1fr;
+  gap:60px; align-items:center;
+  box-shadow:var(--shadow-lg);
+}
+.cta-card::before{
+  content:''; position:absolute;
+  bottom:-100px; right:-80px; width:340px; height:340px;
+  background:radial-gradient(circle, var(--terracotta-soft), transparent 70%);
+  border-radius:50%; opacity:.7;
+}
+.cta-card::after{
+  content:''; position:absolute;
+  top:-120px; left:-100px; width:280px; height:280px;
+  background:radial-gradient(circle, rgba(143,166,142,.5), transparent 70%);
+  border-radius:50%;
+}
+.cta-content{ position:relative; z-index:2; }
+.cta-content h2{
+  font-size:clamp(1.9rem, 3.4vw, 2.8rem);
+  font-weight:400; letter-spacing:-0.025em;
+  line-height:1.12; color:var(--moss);
+  margin-bottom:22px;
+}
+.cta-content h2 em{ font-style:italic; font-weight:500; color:var(--terracotta); }
+.cta-content p{
+  color:var(--moss); opacity:.75; font-size:1.02rem;
+  line-height:1.7; margin-bottom:34px; max-width:480px;
+}
+.cta-actions{ display:flex; gap:14px; flex-wrap:wrap; position:relative; z-index:2; }
+.cta-visual{
+  position:relative; z-index:2;
+  display:flex; align-items:center; justify-content:center;
+}
+.cta-circle{
+  width:230px; height:230px; border-radius:50%;
+  background:var(--moss); color:var(--ivory);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:20px;
+  position:relative;
+  transition:transform .5s var(--ease);
+  box-shadow:var(--shadow-xl);
+}
+.cta-circle:hover{ transform:scale(1.05); }
+.cta-circle::before{
+  content:''; position:absolute; inset:-18px;
+  border:2px dashed rgba(47,74,60,.3);
+  border-radius:50%;
+  animation:blobSpin 40s linear infinite;
+}
+.cta-circle span:first-child{
+  font-family:var(--font-display); font-size:2.8rem;
+  font-weight:500; line-height:1; font-style:italic;
+  color:var(--mint); margin-bottom:6px;
+}
+.cta-circle span:last-child{
+  font-size:.72rem; letter-spacing:.15em;
+  text-transform:uppercase; font-weight:500;
+  color:rgba(253,252,248,.75);
+}
+
+/* ============================================
+   FOOTER
+=============================================== */
+footer{
+  background:var(--moss); color:rgba(253,252,248,.65);
+  padding:90px 0 0;
+  border-radius:var(--radius-lg) var(--radius-lg) 0 0;
+  position:relative; overflow:hidden;
+}
+footer::before{
+  content:''; position:absolute;
+  top:-30%; right:-10%; width:600px; height:600px;
+  background:radial-gradient(circle, rgba(212,232,220,.08), transparent 65%);
+  border-radius:50%; pointer-events:none;
+}
+footer .wrap{ position:relative; z-index:2; }
+.footer-top{
+  display:grid; grid-template-columns:1.5fr 1fr 1fr 1.3fr;
+  gap:50px; padding-bottom:60px;
+  border-bottom:1px solid rgba(212,232,220,.12);
+}
+.footer-brand .logo{ color:var(--ivory); margin-bottom:20px; }
+.footer-brand .logo em{ color:var(--mint); }
+.footer-brand .logo-mark{ background:var(--mint); color:var(--moss); }
+.footer-brand p{
+  font-size:.92rem; line-height:1.7; max-width:300px;
+  color:rgba(253,252,248,.55); margin-bottom:24px;
+}
+.footer-col h5{
+  color:var(--ivory); font-family:var(--font-body);
+  font-size:.72rem; font-weight:600; letter-spacing:.15em;
+  text-transform:uppercase; margin-bottom:22px;
+}
+.footer-col ul li{ margin-bottom:12px; }
+.footer-col ul a{
+  font-size:.9rem; transition:all .3s;
+  color:rgba(253,252,248,.65);
+  display:inline-flex; align-items:center; gap:8px;
+}
+.footer-col ul a::before{
+  content:''; width:0; height:1px;
+  background:var(--mint); transition:width .3s;
+}
+.footer-col ul a:hover{ color:var(--mint); }
+.footer-col ul a:hover::before{ width:12px; }
+.footer-newsletter p{
+  font-size:.9rem; margin-bottom:18px;
+  color:rgba(253,252,248,.6); line-height:1.65;
+}
+.footer-newsletter form{
+  display:flex; align-items:center; gap:8px;
+  background:rgba(212,232,220,.1);
+  border-radius:var(--radius-pill);
+  padding:6px 6px 6px 22px;
+  border:1px solid rgba(212,232,220,.15);
+  transition:all .3s var(--ease);
+}
+.footer-newsletter form:focus-within{
+  border-color:var(--mint); background:rgba(212,232,220,.15);
+}
+.footer-newsletter input{
+  flex:1; background:none; border:none;
+  color:var(--ivory); font-family:var(--font-body);
+  font-size:.88rem; outline:none; padding:8px 0;
+}
+.footer-newsletter input::placeholder{ color:rgba(253,252,248,.4); }
+.footer-newsletter button{
+  width:40px; height:40px; border-radius:50%;
+  background:var(--mint); color:var(--moss);
+  display:flex; align-items:center; justify-content:center;
+  font-size:.85rem; transition:all .3s var(--ease);
+}
+.footer-newsletter button:hover{ background:var(--terracotta); color:var(--ivory); transform:rotate(-15deg); }
+.footer-socials{ display:flex; gap:10px; }
+.footer-socials a{
+  width:40px; height:40px; border-radius:50%;
+  background:rgba(212,232,220,.1);
+  border:1px solid rgba(212,232,220,.15);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--ivory); font-size:.85rem;
+  transition:all .35s var(--ease);
+}
+.footer-socials a:hover{
+  background:var(--mint); color:var(--moss);
+  border-color:var(--mint); transform:translateY(-3px);
+}
+.footer-bottom{
+  display:flex; justify-content:space-between;
+  align-items:center; padding:28px 0;
+  font-size:.82rem; flex-wrap:wrap; gap:12px;
+  color:rgba(253,252,248,.4);
+}
+.footer-bottom a{ color:var(--mint); }
+.footer-bottom a:hover{ color:var(--terracotta-soft); }
+
+/* ============================================
+   SCROLL TOP
+=============================================== */
+.scroll-top{
+  position:fixed; right:24px; bottom:24px;
+  width:50px; height:50px; border-radius:50%;
+  background:var(--moss); color:var(--mint);
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; opacity:0; visibility:hidden;
+  transform:translateY(12px);
+  transition:all .4s var(--ease);
+  z-index:900; font-size:.9rem;
+  box-shadow:var(--shadow-lg);
+}
+.scroll-top.show{ opacity:1; visibility:visible; transform:translateY(0); }
+.scroll-top:hover{ background:var(--terracotta); color:var(--ivory); }
+
+/* ============================================
+   RESPONSIVE
+=============================================== */
+@media(max-width:1100px){
+  .page-hero-grid{ grid-template-columns:1fr; gap:60px; }
+  .hero-visual{ height:520px; max-width:560px; margin:0 auto; }
+  .service-detail-grid,
+  .service-detail.reverse .service-detail-grid{
+    grid-template-columns:1fr; gap:60px;
+  }
+  .service-detail.reverse .service-detail-media{ order:0; }
+  .service-detail.reverse .service-detail-copy{ order:0; }
+  .service-detail-media{ height:460px; }
+  .process-grid{ grid-template-columns:repeat(2, 1fr); }
+  .process-grid::before{ display:none; }
+  .faq-grid{ grid-template-columns:1fr; gap:50px; }
+  .cta-card{ grid-template-columns:1fr; gap:40px; padding:60px 50px; }
+  .cta-visual{ justify-content:flex-start; }
+  .footer-top{ grid-template-columns:1fr 1fr; row-gap:40px; }
+}
+
+@media(max-width:900px){
+  nav.main-nav, .header-right .btn{ display:none; }
+  .burger{ display:flex; }
+}
+
+@media(max-width:768px){
+  .wrap{ padding:0 24px; }
+
+  .page-hero{ padding:130px 0 80px; }
+  .hero-visual{ height:440px; }
+  .hero-image-main{ width:82%; height:74%; }
+  .hero-image-secondary{ width:56%; height:48%; }
+  .hero-badge{ right:-10px; padding:14px 18px; }
+  .hero-badge-icon{ width:38px; height:38px; font-size:.85rem; }
+  .hero-badge-text strong{ font-size:.95rem; }
+  .hero-badge-2{ left:-10px; padding:14px 18px; max-width:190px; }
+  .hero-badge-2 p{ font-size:.8rem; }
+  .hero-stats{ gap:24px; }
+  .hero-stat span:first-child{ font-size:1.6rem; }
+
+  .services-nav{ top:64px; }
+  .services-nav-inner{ padding:16px 24px; }
+
+  .service-detail{ padding:80px 0; }
+  .service-detail-media{ height:360px; }
+  .service-detail-num{ width:64px; height:64px; font-size:1.3rem; }
+  .service-detail-media::before{ width:70px; height:70px; top:-16px; left:-16px; }
+  .service-detail.reverse .service-detail-media::before{ right:-16px; }
+  .service-meta{ gap:24px; }
+
+  .process-section, .faq-section{ padding:90px 0; }
+  .process-grid{ grid-template-columns:1fr; gap:16px; }
+
+  .cta-card{ padding:50px 34px; }
+  .cta-circle{ width:170px; height:170px; }
+  .cta-circle span:first-child{ font-size:2rem; }
+
+  .footer-top{ grid-template-columns:1fr; gap:40px; }
+  .footer-bottom{ justify-content:center; text-align:center; }
+  .hero-leaf{ display:none; }
+}
+
+@media(max-width:520px){
+  .wrap{ padding:0 20px; }
+  .hero-title{ font-size:2.1rem; }
+  .hero-cta .btn{ padding:14px 24px; font-size:.8rem; }
+  .hero-visual{ height:380px; }
+  .hero-badge{ position:relative; top:auto; right:auto; margin:16px 0 0; width:fit-content; animation:none; }
+  .hero-badge-2{ position:relative; bottom:auto; left:auto; margin:14px 0 0; width:fit-content; animation:none; max-width:100%; }
+  .service-detail-media{ height:280px; }
+  .service-detail-media::before{ width:60px; height:60px; }
+  .cta-actions .btn{ width:100%; justify-content:center; }
+  .cta-circle{ width:150px; height:150px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="siteHeader">
+  <div class="wrap">
+    <a href="index.html" class="logo">
+      <span class="logo-mark"><i class="fa-solid fa-leaf"></i></span>
+      <span>Mint <em>&amp;</em> Moss</span>
+    </a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <span class="icon-btn"><i class="fa-solid fa-phone"></i></span>
+      <a href="contact.html" class="btn"><span>Book Visit</span></a>
+      <div class="burger" id="burgerBtn"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-close" id="mobileClose"><i class="fa-solid fa-xmark"></i></div>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html" class="active">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn" style="margin-top:16px;"><span>Book a Visit</span></a>
+</div>
+
+<!-- ============================================
+     PAGE HERO
+=============================================== -->
+<section class="page-hero">
+  <div class="page-hero-blob pb-1"></div>
+  <div class="page-hero-blob pb-2"></div>
+
+  <i class="fa-solid fa-leaf hero-leaf l-1"></i>
+  <i class="fa-solid fa-seedling hero-leaf l-2"></i>
+  <i class="fa-solid fa-leaf hero-leaf l-3"></i>
+  <i class="fa-solid fa-seedling hero-leaf l-4"></i>
+
+  <div class="wrap">
+    <div class="page-hero-grid">
+
+      <div class="hero-content">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>Services</span>
+        </div>
+
+        <div class="hero-eyebrow">
+          <span class="dot"></span>
+          Six services, one gentle approach
+        </div>
+
+        <h1 class="hero-title">
+          Modern care, <em class="underline-squiggle">delivered gently</em>.
+        </h1>
+
+        <p class="hero-text">
+          From routine checkups to full smile makeovers, every treatment we
+          offer is chosen for its gentleness, its longevity, and the comfort
+          it brings to your visit.
+        </p>
+
+        <div class="hero-cta">
+          <a href="contact.html" class="btn"><span>Book a Visit</span> <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#services-list" class="btn-outline btn"><span>See All Services</span></a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span>6</span>
+            <span>Core Services</span>
+          </div>
+          <div class="hero-stat">
+            <span>BPA<em>-free</em></span>
+            <span>Materials Standard</span>
+          </div>
+          <div class="hero-stat">
+            <span>0</span>
+            <span>Rushed Appointments</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-circle"></div>
+
+        <div class="hero-image-main">
+          <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1000&q=80" alt="Gentle dental treatment">
+        </div>
+
+        <div class="hero-image-secondary">
+          <img src="https://images.unsplash.com/photo-1593022356769-11f762e25ed9?auto=format&fit=crop&w=700&q=80" alt="Dental care detail">
+        </div>
+
+        <div class="hero-badge">
+          <div class="hero-badge-icon"><i class="fa-solid fa-shield-heart"></i></div>
+          <div class="hero-badge-text">
+            <strong>Gentle First</strong>
+            <span>Every visit, every time</span>
+          </div>
+        </div>
+
+        <div class="hero-badge-2">
+          <div class="founder">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=100&q=80" alt="Dr. Anika Rao">
+            <span>— Dr. Anika Rao</span>
+          </div>
+          <p>"Modern dentistry should feel calm, not clinical."</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="hero-curve">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+      <path d="M0,50 C240,90 480,0 720,50 C960,90 1200,0 1440,50 L1440,90 L0,90 Z" fill="#FDFCF8"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ============================================
+     QUICK NAV
+=============================================== -->
+<div class="services-nav" id="services-list">
+  <div class="services-nav-inner">
+    <a href="#general" class="services-nav-link active"><i class="fa-solid fa-tooth"></i> General</a>
+    <a href="#whitening" class="services-nav-link"><i class="fa-solid fa-wand-magic-sparkles"></i> Whitening</a>
+    <a href="#implants" class="services-nav-link"><i class="fa-solid fa-teeth"></i> Implants</a>
+    <a href="#aligners" class="services-nav-link"><i class="fa-solid fa-teeth-open"></i> Aligners</a>
+    <a href="#root-canal" class="services-nav-link"><i class="fa-solid fa-kit-medical"></i> Root Canal</a>
+    <a href="#pediatric" class="services-nav-link"><i class="fa-solid fa-child"></i> Pediatric</a>
+  </div>
+</div>
+
+<!-- ============================================
+     SERVICE 1 — GENERAL
+=============================================== -->
+<section class="service-detail" id="general">
+  <div class="wrap">
+    <div class="service-detail-grid">
+
+      <div class="service-detail-media" data-aos="fade-right">
+        <div class="service-detail-image">
+          <img src="https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=1000&q=80" alt="General dentistry">
+        </div>
+        <span class="service-detail-num">01</span>
+      </div>
+
+      <div class="service-detail-copy" data-aos="fade-left">
+        <div class="eyebrow mint">General &amp; Preventive</div>
+        <h2>Small care, taken <em>quietly and consistently</em>.</h2>
+        <p>
+          The foundation of everything we do. Regular examinations, gentle
+          hygiene therapy, and preventive treatments designed to keep small
+          things from ever becoming large ones.
+        </p>
+
+        <div class="service-features">
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Full examination with digital photography and gentle probing</span>
+          </div>
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Hygiene therapy &amp; air-polishing with minimal discomfort</span>
+          </div>
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Fluoride &amp; fissure sealants for long-term protection</span>
+          </div>
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Early intervention and honest monitoring of small changes</span>
+          </div>
+        </div>
+
+        <div class="service-meta">
+          <div class="service-meta-item">
+            <span>Duration</span>
+            <span>45 minutes</span>
+          </div>
+          <div class="service-meta-item">
+            <span>Frequency</span>
+            <span>Every 6 months</span>
+          </div>
+          <div class="service-meta-item">
+            <span>Comfort</span>
+            <span>Fully painless</span>
+          </div>
+        </div>
+
+        <a href="contact.html" class="btn"><span>Book a Checkup</span> <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SERVICE 2 — WHITENING
+=============================================== -->
+<section class="service-detail reverse" id="whitening">
+  <div class="wrap">
+    <div class="service-detail-grid">
+
+      <div class="service-detail-media" data-aos="fade-left">
+        <div class="service-detail-image">
+          <img src="https://images.unsplash.com/photo-1677026010083-78ec7f1b84ed?auto=format&fit=crop&w=1000&q=80" alt="Teeth whitening">
+        </div>
+        <span class="service-detail-num">02</span>
+      </div>
+
+      <div class="service-detail-copy" data-aos="fade-right">
+        <div class="eyebrow">Teeth Whitening</div>
+        <h2>Brighter, without <em>the sensitivity</em>.</h2>
+        <p>
+          Gentle, enamel-safe whitening that lifts years of coffee, tea, and
+          life off your smile — with a formula designed specifically for
+          sensitive teeth.
+        </p>
+
+        <div class="service-features">
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>In-office whitening in a single relaxed visit</span>
+          </div>
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Custom take-home trays for touch-ups</span>
+          </div>
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Enamel-safe, sensitivity-controlled formula</span>
+          </div>
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Results visible immediately after treatment</span>
+          </div>
+        </div>
+
+        <div class="service-meta">
+          <div class="service-meta-item">
+            <span>Duration</span>
+            <span>45–60 minutes</span>
+          </div>
+          <div class="service-meta-item">
+            <span>Visits</span>
+            <span>Single sitting</span>
+          </div>
+          <div class="service-meta-item">
+            <span>Results Last</span>
+            <span>1–2 years</span>
+          </div>
+        </div>
+
+        <a href="contact.html" class="btn"><span>Whiten My Smile</span> <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SERVICE 3 — IMPLANTS
+=============================================== -->
+<section class="service-detail" id="implants">
+  <div class="wrap">
+    <div class="service-detail-grid">
+
+      <div class="service-detail-media" data-aos="fade-right">
+        <div class="service-detail-image">
+          <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=1000&q=80" alt="Dental implants">
+        </div>
+        <span class="service-detail-num">03</span>
+      </div>
+
+      <div class="service-detail-copy" data-aos="fade-left">
+        <div class="eyebrow mint">Dental Implants</div>
+        <h2>Rebuilt to <em>last a lifetime</em>.</h2>
+        <p>
+          Permanent, natural-looking replacements for missing teeth — placed
+          with guided digital surgery and finished with ceramic crowns matched
+          to your existing teeth.
+        </p>
+
+        <div class="service-features">
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Guided digital planning and 3D CBCT imaging</span>
+          </div>
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Single implants, bridges and full-arch solutions</span>
+          </div>
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Premium implant systems with lifetime warranty</span>
+          </div>
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Custom ceramic crowns, colour-matched to adjacent teeth</span>
+          </div>
+        </div>
+
+        <div class="service-meta">
+          <div class="service-meta-item">
+            <span>Surgery</span>
+            <span>1–2 hours</span>
+          </div>
+          <div class="service-meta-item">
+            <span>Healing</span>
+            <span>3–6 months</span>
+          </div>
+          <div class="service-meta-item">
+            <span>Lifespan</span>
+            <span>20+ years</span>
+          </div>
+        </div>
+
+        <a href="contact.html" class="btn"><span>Consult Implantologist</span> <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SERVICE 4 — ALIGNERS
+=============================================== -->
+<section class="service-detail reverse" id="aligners">
+  <div class="wrap">
+    <div class="service-detail-grid">
+
+      <div class="service-detail-media" data-aos="fade-left">
+        <div class="service-detail-image">
+          <img src="https://images.unsplash.com/photo-1643660527071-52e37cf7c7ea?auto=format&fit=crop&w=1000&q=80" alt="Clear aligners">
+        </div>
+        <span class="service-detail-num">04</span>
+      </div>
+
+      <div class="service-detail-copy" data-aos="fade-right">
+        <div class="eyebrow">Braces &amp; Aligners</div>
+        <h2>Straightening, <em>without the noise</em>.</h2>
+        <p>
+          Invisible orthodontics planned and monitored digitally. Ideal for
+          adults and teens who want to straighten their teeth without
+          anyone — including themselves — noticing the process.
+        </p>
+
+        <div class="service-features">
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Fully digital scan, plan and outcome preview</span>
+          </div>
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Removable aligners — eat, drink and clean normally</span>
+          </div>
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Regular remote check-ins where possible</span>
+          </div>
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Retainers included to protect your result long-term</span>
+          </div>
+        </div>
+
+        <div class="service-meta">
+          <div class="service-meta-item">
+            <span>Duration</span>
+            <span>6–18 months</span>
+          </div>
+          <div class="service-meta-item">
+            <span>Visits</span>
+            <span>Every 6–8 weeks</span>
+          </div>
+          <div class="service-meta-item">
+            <span>Visibility</span>
+            <span>Barely visible</span>
+          </div>
+        </div>
+
+        <a href="contact.html" class="btn"><span>Start Aligners</span> <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SERVICE 5 — ROOT CANAL
+=============================================== -->
+<section class="service-detail" id="root-canal">
+  <div class="wrap">
+    <div class="service-detail-grid">
+
+      <div class="service-detail-media" data-aos="fade-right">
+        <div class="service-detail-image">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80" alt="Root canal therapy">
+        </div>
+        <span class="service-detail-num">05</span>
+      </div>
+
+      <div class="service-detail-copy" data-aos="fade-left">
+        <div class="eyebrow mint">Root Canal Therapy</div>
+        <h2>Save the tooth, <em>end the pain</em>.</h2>
+        <p>
+          Modern endodontics means a root canal today is a comfortable,
+          often single-visit procedure. We use rotary instruments and gentle
+          anaesthesia so you can keep your natural tooth — without the fear.
+        </p>
+
+        <div class="service-features">
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Single-visit treatment using rotary endodontics</span>
+          </div>
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Advanced anaesthesia for a painless experience</span>
+          </div>
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Apex locators &amp; digital X-rays for precision</span>
+          </div>
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Crown placement to protect the treated tooth</span>
+          </div>
+        </div>
+
+        <div class="service-meta">
+          <div class="service-meta-item">
+            <span>Duration</span>
+            <span>60–90 minutes</span>
+          </div>
+          <div class="service-meta-item">
+            <span>Visits</span>
+            <span>1–2 sittings</span>
+          </div>
+          <div class="service-meta-item">
+            <span>Comfort</span>
+            <span>Painless</span>
+          </div>
+        </div>
+
+        <a href="contact.html" class="btn"><span>Book Root Canal</span> <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SERVICE 6 — PEDIATRIC
+=============================================== -->
+<section class="service-detail reverse" id="pediatric">
+  <div class="wrap">
+    <div class="service-detail-grid">
+
+      <div class="service-detail-media" data-aos="fade-left">
+        <div class="service-detail-image">
+          <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1000&q=80" alt="Pediatric dentistry">
+        </div>
+        <span class="service-detail-num">06</span>
+      </div>
+
+      <div class="service-detail-copy" data-aos="fade-right">
+        <div class="eyebrow">Pediatric Dentistry</div>
+        <h2>Gentle dentistry for <em>little smiles</em>.</h2>
+        <p>
+          Children need a different approach — patient, playful, and
+          reassuring. Our pediatric team is trained to make kids feel safe
+          and relaxed, building positive dental habits for life.
+        </p>
+
+        <div class="service-features">
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Child-friendly checkups and gentle cleanings</span>
+          </div>
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Fluoride treatment &amp; pit-and-fissure sealants</span>
+          </div>
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Habit-breaking appliances &amp; early orthodontics</span>
+          </div>
+          <div class="service-feature">
+            <span class="service-feature-icon"><i class="fa-solid fa-check"></i></span>
+            <span>Gentle care for milk teeth and first permanent teeth</span>
+          </div>
+        </div>
+
+        <div class="service-meta">
+          <div class="service-meta-item">
+            <span>Duration</span>
+            <span>20–40 minutes</span>
+          </div>
+          <div class="service-meta-item">
+            <span>Ages</span>
+            <span>1–14 years</span>
+          </div>
+          <div class="service-meta-item">
+            <span>Approach</span>
+            <span>Playful &amp; gentle</span>
+          </div>
+        </div>
+
+        <a href="contact.html" class="btn"><span>Book Kids Visit</span> <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PROCESS
+=============================================== -->
+<section class="process-section">
+  <div class="wrap">
+    <div class="section-head center" data-aos="fade-up" style="margin-inline:auto;">
+      <div class="eyebrow centered">How It Works</div>
+      <h2>Your visit, <em>step by gentle step</em>.</h2>
+      <p>From your first phone call to your final review — here's exactly what to expect, whichever service you're here for.</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step" data-aos="fade-up">
+        <div class="process-num">01</div>
+        <h4>Warm Welcome</h4>
+        <p>Comfortable lounge, herbal tea, and a short chat before we begin.</p>
+      </div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="80">
+        <div class="process-num">02</div>
+        <h4>Gentle Exam</h4>
+        <p>Low-radiation digital imaging and a thorough but unhurried check.</p>
+      </div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="160">
+        <div class="process-num">03</div>
+        <h4>Clear Plan</h4>
+        <p>Honest recommendations, transparent costs, and time for your questions.</p>
+      </div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="240">
+        <div class="process-num">04</div>
+        <h4>Comfortable Care</h4>
+        <p>Treatment delivered at your pace, with regular check-ins throughout.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FAQ
+=============================================== -->
+<section class="faq-section">
+  <div class="wrap">
+    <div class="faq-grid">
+      <div class="faq-head" data-aos="fade-right">
+        <div class="section-head">
+          <div class="eyebrow">Common Questions</div>
+          <h2>Things patients <em>often ask</em>.</h2>
+          <p>A few answers before your first visit — and if your question isn't here, we're always happy to talk it through.</p>
+        </div>
+        <a href="contact.html" class="arrow-link">
+          <span>Ask us anything</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="faq-list" data-aos="fade-left">
+        <div class="faq-item">
+          <div class="faq-q">Which treatment should I start with?<i class="fa-solid fa-plus"></i></div>
+          <div class="faq-a"><p>Almost always, a consultation. We'll examine, listen, and recommend a plan in order of priority — sometimes starting with something simple and preventive before cosmetic work.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do you treat nervous patients?<i class="fa-solid fa-plus"></i></div>
+          <div class="faq-a"><p>Very much so. A large part of our practice is patients who haven't been to a dentist in years. We work at your pace, with longer appointments and gentle techniques.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Are dental implants painful?<i class="fa-solid fa-plus"></i></div>
+          <div class="faq-a"><p>The procedure itself is completely painless under local anaesthesia. Post-operative discomfort is typically mild and well-managed with simple pain relief for a few days.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How long does teeth whitening last?<i class="fa-solid fa-plus"></i></div>
+          <div class="faq-a"><p>Professional whitening typically lasts one to two years, depending on your diet and habits. Avoiding tobacco, coffee, and red wine — and using a take-home touch-up kit — helps extend the results.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">At what age should my child first see a dentist?<i class="fa-solid fa-plus"></i></div>
+          <div class="faq-a"><p>We recommend a first visit by age one, or within six months of the first tooth appearing. Early visits help prevent problems and get children comfortable with the dental chair.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do you offer payment plans?<i class="fa-solid fa-plus"></i></div>
+          <div class="faq-a"><p>Yes — for larger treatment plans we offer staged payments and interest-free instalments. Ask during your consultation and we'll outline the options.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CTA
+=============================================== -->
+<section class="cta-section">
+  <div class="wrap">
+    <div class="cta-card" data-aos="zoom-in">
+      <div class="cta-content">
+        <div class="eyebrow mint" style="margin-bottom:22px;">Not Sure Where to Begin?</div>
+        <h2>Let's talk it <em>through together</em>.</h2>
+        <p>Book a consultation and we'll guide you — no pressure, no rush. Just honest advice on what your smile actually needs.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn"><span>Book a Visit</span> <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="gallery.html" class="btn-outline btn"><span>See the Work</span></a>
+        </div>
+      </div>
+      <div class="cta-visual">
+        <a href="contact.html" class="cta-circle">
+          <span>Book</span>
+          <span>Consultation</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+=============================================== -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-mark"><i class="fa-solid fa-leaf"></i></span>
+          <span>Mint <em>&amp;</em> Moss</span>
+        </a>
+        <p>A gentle, wellness-focused dental studio — for adults, families, and anyone who wants a kinder dental experience.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Studio</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html#general">General Dentistry</a></li>
+          <li><a href="services.html#whitening">Teeth Whitening</a></li>
+          <li><a href="services.html#implants">Implants</a></li>
+          <li><a href="services.html#pediatric">Pediatric Care</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h5>Stay In Touch</h5>
+        <p>Gentle tips and studio news. Occasional, never spammy.</p>
+        <form onsubmit="event.preventDefault(); this.reset(); alert('Thanks for subscribing!');">
+          <input type="email" placeholder="your@email.com" required>
+          <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Mint &amp; Moss Dental Co. All rights reserved.</span>
+      <span>Made with care, in Pune · <a href="#">Privacy</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="scroll-top" id="scrollTop"><i class="fa-solid fa-arrow-up"></i></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+AOS.init({ duration: 800, once: true, offset: 60, easing: 'ease-out-cubic' });
+
+const header = document.getElementById('siteHeader');
+const scrollTopBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 40);
+  scrollTopBtn.classList.toggle('show', window.scrollY > 500);
+});
+scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+const burger = document.getElementById('burgerBtn');
+const mobileNav = document.getElementById('mobileNav');
+const mobileClose = document.getElementById('mobileClose');
+burger.addEventListener('click', () => mobileNav.classList.add('open'));
+mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') mobileNav.classList.remove('open'); });
+
+/* Active nav */
+const navLinks = document.querySelectorAll('nav.main-nav a, .mobile-nav a');
+function fileOf(url) {
+  let f = (url || '').split('#')[0].split('?')[0].split('/').pop().toLowerCase();
+  if (f === '' || f === 'home.html' || f === 'home') f = 'index.html';
+  return f;
+}
+function setActiveLink() {
+  const currentPage = fileOf(window.location.pathname);
+  navLinks.forEach(link => {
+    if (link.classList.contains('btn')) return;
+    link.classList.toggle('active', fileOf(link.getAttribute('href')) === currentPage);
+  });
+}
+window.addEventListener('DOMContentLoaded', setActiveLink);
+window.addEventListener('load', setActiveLink);
+
+/* FAQ Accordion */
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(item => {
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.addEventListener('click', () => {
+    const open = item.classList.contains('open');
+    faqItems.forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if (!open) {
+      item.classList.add('open');
+      a.style.maxHeight = a.scrollHeight + 'px';
+    }
+  });
+});
+if (faqItems.length) {
+  faqItems[0].classList.add('open');
+  const f = faqItems[0].querySelector('.faq-a');
+  f.style.maxHeight = f.scrollHeight + 'px';
+}
+
+/* Scroll Spy for services-nav */
+const serviceNavLinks = document.querySelectorAll('.services-nav-link');
+const serviceSections = document.querySelectorAll('.service-detail');
+
+serviceNavLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = link.getAttribute('href');
+    const el = document.querySelector(target);
+    if (el) {
+      const offset = 140;
+      const y = el.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  });
+});
+
+function updateServiceNav() {
+  const scrollY = window.scrollY + 200;
+  let current = '';
+  serviceSections.forEach(sec => {
+    if (sec.offsetTop <= scrollY) current = sec.id;
+  });
+  serviceNavLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+  });
+}
+window.addEventListener('scroll', updateServiceNav);
+window.addEventListener('load', updateServiceNav);
+</script>
+</body>
+</html>

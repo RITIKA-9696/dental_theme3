@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mint &amp; Moss Dental Co. — Gentle Dental Care, Naturally</title>
+<meta name="description" content="Mint & Moss Dental Co. is a modern, wellness-focused dental studio offering gentle, holistic dental care for adults and families.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+<style>
+/* ============================================
+   MINT & MOSS — ENHANCED TOKENS
+=============================================== */
+:root{
+  --moss:#2F4A3C;
+  --moss-deep:#1F3329;
+  --moss-light:#3D5E4C;
+  --sage:#8FA68E;
+  --mint:#D4E8DC;
+  --mint-soft:#E8F2EC;
+  --mint-glow:#F0F7F2;
+  --terracotta:#D89B7C;
+  --terracotta-soft:#F0C7AE;
+  --cream:#F8F5EE;
+  --ivory:#FDFCF8;
+  --ink:#1F2A24;
+  --muted:#7A8B7F;
+  --line:rgba(47,74,60,.12);
+
+  --font-display:'Fraunces', serif;
+  --font-body:'Sora', sans-serif;
+
+  --ease:cubic-bezier(.4,0,.2,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+
+  --container:1280px;
+  --radius-sm:12px;
+  --radius:20px;
+  --radius-lg:32px;
+  --radius-pill:999px;
+
+  --shadow-sm:0 4px 14px rgba(47,74,60,.06);
+  --shadow:0 12px 30px rgba(47,74,60,.08);
+  --shadow-lg:0 30px 60px rgba(47,74,60,.12);
+  --shadow-xl:0 50px 100px rgba(47,74,60,.15);
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; -webkit-font-smoothing:antialiased; }
+body{
+  font-family:var(--font-body); color:var(--ink); background:var(--ivory);
+  overflow-x:hidden; line-height:1.7; font-size:15.5px;
+  font-weight:400; letter-spacing:-0.005em;
+}
+img{ max-width:100%; display:block; }
+a{ text-decoration:none; color:inherit; }
+ul{ list-style:none; }
+button{ font-family:inherit; cursor:pointer; border:none; background:none; }
+
+.wrap{ max-width:var(--container); margin:0 auto; padding:0 40px; }
+
+h1,h2,h3,h4,h5{
+  font-family:var(--font-display); font-weight:400; line-height:1.1;
+  color:var(--moss); letter-spacing:-0.02em;
+  font-variation-settings:'SOFT' 100, 'WONK' 1;
+}
+h1{ font-weight:500; }
+
+section{ position:relative; }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:.001ms !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
+}
+
+::selection{ background:var(--mint); color:var(--moss); }
+
+::-webkit-scrollbar{ width:8px; }
+::-webkit-scrollbar-track{ background:var(--cream); }
+::-webkit-scrollbar-thumb{ background:var(--sage); border-radius:8px; }
+
+/* ============================================
+   BUTTONS
+=============================================== */
+.btn{
+  position:relative; display:inline-flex; align-items:center; gap:10px;
+  padding:16px 32px; font-family:var(--font-body); font-weight:500;
+  font-size:.85rem; letter-spacing:-0.005em;
+  color:var(--ivory); background:var(--moss);
+  border-radius:var(--radius-pill); overflow:hidden;
+  isolation:isolate; cursor:pointer;
+  transition:transform .4s var(--ease), box-shadow .4s var(--ease);
+  box-shadow:0 4px 14px rgba(47,74,60,.18);
+}
+.btn span, .btn i{ position:relative; z-index:2; transition:color .4s var(--ease); }
+.btn i{ font-size:.75rem; transition:transform .4s var(--ease), color .4s var(--ease); }
+.btn::before{
+  content:''; position:absolute; inset:auto 0 0 0; height:0;
+  background:var(--terracotta); z-index:1;
+  transition:height .5s var(--ease-out);
+}
+.btn:hover{ transform:translateY(-2px); box-shadow:0 14px 30px rgba(47,74,60,.25); }
+.btn:hover::before{ height:100%; }
+.btn:hover i{ transform:translateX(4px); }
+
+.btn-outline{
+  background:transparent; color:var(--moss);
+  border:1.5px solid var(--moss); box-shadow:none;
+}
+.btn-outline::before{ background:var(--moss); }
+.btn-outline:hover{ color:var(--ivory); }
+
+.btn-mint{ background:var(--mint); color:var(--moss); box-shadow:none; }
+.btn-mint::before{ background:var(--moss); }
+.btn-mint:hover{ color:var(--ivory); }
+
+.btn-terra{
+  background:var(--terracotta); color:var(--ivory);
+  box-shadow:0 4px 14px rgba(216,155,124,.3);
+}
+.btn-terra::before{ background:var(--moss); }
+.btn-terra:hover{ box-shadow:0 14px 30px rgba(216,155,124,.4); }
+
+.arrow-link{
+  display:inline-flex; align-items:center; gap:10px;
+  color:var(--moss); font-weight:500; font-size:.9rem;
+  padding-bottom:4px; position:relative;
+  transition:color .3s;
+}
+.arrow-link::after{
+  content:''; position:absolute; left:0; bottom:0; right:0;
+  height:1.5px; background:var(--sage);
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .5s var(--ease-out);
+}
+.arrow-link i{ font-size:.8rem; transition:transform .4s var(--ease); }
+.arrow-link:hover{ color:var(--terracotta); }
+.arrow-link:hover::after{ transform:scaleX(1); background:var(--terracotta); }
+.arrow-link:hover i{ transform:translateX(5px); }
+
+/* ============================================
+   LOGO
+=============================================== */
+.logo{
+  display:flex; align-items:center; gap:11px;
+  font-family:var(--font-display); font-size:1.3rem;
+  font-weight:600; color:var(--moss); letter-spacing:-0.02em;
+}
+.logo-mark{
+  width:38px; height:38px; border-radius:50%;
+  background:var(--mint); color:var(--moss);
+  display:flex; align-items:center; justify-content:center;
+  transition:all .4s var(--ease);
+  position:relative; overflow:hidden;
+}
+.logo-mark::before{
+  content:''; position:absolute; inset:0;
+  background:var(--moss); border-radius:50%;
+  transform:scale(0); transition:transform .5s var(--ease-out);
+}
+.logo-mark i{
+  position:relative; z-index:2; font-size:1rem;
+  transition:color .4s var(--ease);
+}
+.logo:hover .logo-mark::before{ transform:scale(1); }
+.logo:hover .logo-mark i{ color:var(--mint); }
+.logo em{ font-style:italic; font-weight:300; color:var(--sage); }
+
+/* ============================================
+   HEADER
+=============================================== */
+header{
+  position:fixed; inset:0 0 auto 0; z-index:1000;
+  padding:20px 0; transition:all .45s var(--ease);
+}
+header .wrap{ display:flex; align-items:center; justify-content:space-between; gap:30px; }
+nav.main-nav ul{ display:flex; gap:4px; align-items:center; }
+nav.main-nav a{
+  color:var(--moss); font-size:.88rem; font-weight:500;
+  padding:10px 18px; border-radius:var(--radius-pill);
+  transition:background .35s var(--ease), color .35s var(--ease);
+}
+nav.main-nav a:hover{ background:var(--mint-soft); }
+nav.main-nav a.active{ background:var(--moss); color:var(--ivory); }
+.header-right{ display:flex; align-items:center; gap:14px; }
+.icon-btn{
+  color:var(--moss); font-size:1rem; cursor:pointer;
+  width:42px; height:42px; border-radius:50%;
+  background:var(--mint-soft);
+  display:flex; align-items:center; justify-content:center;
+  transition:all .35s var(--ease);
+}
+.icon-btn:hover{ background:var(--mint); transform:translateY(-2px); }
+.burger{
+  display:none; flex-direction:column; gap:5px;
+  cursor:pointer; padding:10px;
+}
+.burger span{
+  width:24px; height:2px; background:var(--moss);
+  border-radius:2px; transition:.3s;
+}
+header.scrolled{
+  background:rgba(253,252,248,.85);
+  backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+  padding:12px 0; box-shadow:0 8px 24px rgba(47,74,60,.06);
+  border-bottom:1px solid var(--line);
+}
+
+/* ============================================
+   MOBILE NAV
+=============================================== */
+.mobile-nav{
+  position:fixed; inset:0; z-index:1500;
+  background:var(--moss); color:var(--ivory);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:20px; transform:translateY(-100%);
+  transition:transform .55s var(--ease-out);
+  visibility:hidden;
+}
+.mobile-nav.open{ transform:translateY(0); visibility:visible; }
+.mobile-nav a{
+  color:var(--ivory); font-family:var(--font-display);
+  font-size:1.9rem; font-weight:400;
+  padding:8px 20px; border-radius:var(--radius-pill);
+  transition:background .3s;
+}
+.mobile-nav a:hover, .mobile-nav a.active{
+  background:var(--mint); color:var(--moss);
+}
+.mobile-nav .btn{ font-family:var(--font-body); margin-top:14px; font-size:.82rem; }
+.mobile-close{
+  position:absolute; top:24px; right:28px;
+  width:46px; height:46px; border-radius:50%;
+  background:rgba(212,232,220,.15); color:var(--ivory);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.2rem; cursor:pointer;
+  transition:all .3s var(--ease);
+}
+.mobile-close:hover{ background:var(--mint); color:var(--moss); }
+
+/* ============================================
+   HERO — Enhanced
+=============================================== */
+.hero{
+  padding:150px 0 0;
+  background:var(--cream);
+  position:relative; overflow:hidden;
+  min-height:100vh;
+  display:flex; flex-direction:column;
+}
+
+/* Background decorations */
+.hero-bg-blob{
+  position:absolute; border-radius:50%;
+  filter:blur(60px); pointer-events:none; z-index:0;
+}
+.hero-bg-blob.blob-1{
+  top:-10%; right:-5%; width:700px; height:700px;
+  background:radial-gradient(circle, var(--mint) 0%, transparent 65%);
+  opacity:.9;
+}
+.hero-bg-blob.blob-2{
+  bottom:0%; left:-15%; width:600px; height:600px;
+  background:radial-gradient(circle, var(--terracotta-soft) 0%, transparent 70%);
+  opacity:.5;
+}
+.hero-bg-blob.blob-3{
+  top:40%; left:40%; width:400px; height:400px;
+  background:radial-gradient(circle, rgba(143,166,142,.4) 0%, transparent 70%);
+  opacity:.6;
+}
+
+/* Decorative floating leaves */
+.hero-leaf{
+  position:absolute; color:var(--sage); opacity:.35;
+  z-index:1; pointer-events:none;
+}
+.hero-leaf.l-1{ top:18%; left:4%; font-size:1.8rem; animation:floatLeaf 6s ease-in-out infinite; }
+.hero-leaf.l-2{ top:65%; left:8%; font-size:1.2rem; animation:floatLeaf 7s ease-in-out infinite .5s; }
+.hero-leaf.l-3{ top:12%; right:6%; font-size:1.5rem; animation:floatLeaf 8s ease-in-out infinite 1s; }
+.hero-leaf.l-4{ bottom:20%; right:4%; font-size:2rem; animation:floatLeaf 9s ease-in-out infinite 1.5s; }
+
+@keyframes floatLeaf{
+  0%,100%{ transform:translateY(0) rotate(0deg); }
+  50%{ transform:translateY(-20px) rotate(8deg); }
+}
+
+.hero .wrap{ position:relative; z-index:3; flex:1; display:flex; align-items:center; padding-bottom:80px; }
+
+.hero-grid{
+  display:grid; grid-template-columns:1.05fr 1fr;
+  gap:70px; align-items:center; width:100%;
+}
+
+.hero-content{ position:relative; }
+
+.hero-eyebrow{
+  display:inline-flex; align-items:center; gap:10px;
+  font-size:.78rem; font-weight:500;
+  color:var(--moss);
+  background:var(--ivory); padding:10px 18px;
+  border-radius:var(--radius-pill);
+  margin-bottom:28px;
+  box-shadow:var(--shadow-sm);
+  animation:fadeUp .8s var(--ease-out) .05s both;
+}
+.hero-eyebrow .dot{
+  width:8px; height:8px; border-radius:50%;
+  background:var(--terracotta);
+  box-shadow:0 0 0 3px rgba(216,155,124,.25);
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{ box-shadow:0 0 0 3px rgba(216,155,124,.25); }
+  50%{ box-shadow:0 0 0 6px rgba(216,155,124,.1); }
+}
+
+.hero-title{
+  font-size:clamp(2.6rem, 5.4vw, 4.5rem);
+  line-height:1.02; letter-spacing:-0.03em;
+  font-weight:400; color:var(--moss);
+  margin-bottom:28px;
+  animation:fadeUp .9s var(--ease-out) .15s both;
+}
+.hero-title em{
+  font-style:italic; font-weight:500;
+  color:var(--terracotta);
+  position:relative;
+  display:inline-block;
+}
+.hero-title .underline-squiggle{
+  position:relative; display:inline-block;
+}
+.hero-title .underline-squiggle::after{
+  content:''; position:absolute;
+  left:0; right:0; bottom:0.05em; height:0.22em;
+  background:var(--mint); border-radius:999px;
+  z-index:-1;
+}
+
+.hero-text{
+  color:var(--muted); font-size:1.08rem; line-height:1.75;
+  max-width:520px; margin-bottom:38px;
+  animation:fadeUp .9s var(--ease-out) .3s both;
+}
+
+.hero-cta{
+  display:flex; gap:14px; flex-wrap:wrap;
+  animation:fadeUp .9s var(--ease-out) .45s both;
+  margin-bottom:48px;
+}
+
+/* Hero stats row */
+.hero-stats{
+  display:flex; gap:36px; flex-wrap:wrap;
+  padding-top:32px; border-top:1px solid var(--line);
+  animation:fadeUp .9s var(--ease-out) .6s both;
+}
+.hero-stat span:first-child{
+  display:block; font-family:var(--font-display);
+  font-size:2rem; font-weight:500; color:var(--moss);
+  line-height:1; margin-bottom:4px;
+  letter-spacing:-0.02em;
+}
+.hero-stat span:first-child em{ font-style:italic; color:var(--terracotta); }
+.hero-stat span:last-child{
+  font-size:.78rem; color:var(--muted);
+  letter-spacing:.02em; font-weight:500;
+}
+
+/* Hero visual — layered composition */
+.hero-visual{
+  position:relative; height:640px;
+  animation:fadeUp 1s var(--ease-out) .3s both;
+}
+
+.hero-image-main{
+  position:absolute; top:40px; right:0;
+  width:78%; height:78%;
+  border-radius:50% 50% 50% 50% / 55% 55% 45% 45%;
+  overflow:hidden;
+  box-shadow:var(--shadow-xl);
+  z-index:2;
+}
+.hero-image-main img{
+  width:100%; height:100%; object-fit:cover;
+}
+
+.hero-image-secondary{
+  position:absolute; bottom:0; left:0;
+  width:52%; height:52%;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  border:8px solid var(--cream);
+  box-shadow:var(--shadow-lg);
+  z-index:3;
+}
+.hero-image-secondary img{
+  width:100%; height:100%; object-fit:cover;
+}
+
+/* Decorative circle behind */
+.hero-circle{
+  position:absolute; top:0; right:12%;
+  width:180px; height:180px;
+  border:2px dashed rgba(47,74,60,.25);
+  border-radius:50%;
+  z-index:1;
+  animation:blobSpin 40s linear infinite;
+}
+@keyframes blobSpin{ to{ transform:rotate(360deg); } }
+
+/* Floating badges */
+.hero-badge{
+  position:absolute; top:8%; right:-4%;
+  background:var(--ivory); padding:16px 20px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-lg);
+  display:flex; align-items:center; gap:12px;
+  animation:floatY 4s ease-in-out infinite;
+  z-index:4;
+}
+.hero-badge-icon{
+  width:44px; height:44px; border-radius:14px;
+  background:var(--mint); color:var(--moss);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1rem;
+}
+.hero-badge-text strong{
+  display:block; font-family:var(--font-display);
+  font-size:1.1rem; color:var(--moss); font-weight:600;
+  line-height:1.1;
+}
+.hero-badge-text span{
+  font-size:.72rem; color:var(--muted);
+}
+
+.hero-badge-2{
+  position:absolute; bottom:12%; left:-8%;
+  background:var(--moss); color:var(--ivory);
+  padding:16px 22px; border-radius:var(--radius);
+  box-shadow:var(--shadow-xl);
+  animation:floatY2 5s ease-in-out infinite;
+  z-index:5;
+  max-width:220px;
+}
+.hero-badge-2 .stars{
+  display:flex; gap:3px; color:var(--terracotta-soft);
+  font-size:.75rem; margin-bottom:6px;
+}
+.hero-badge-2 span{
+  font-size:.8rem; font-weight:400; line-height:1.4;
+  display:block;
+}
+.hero-badge-2 strong{
+  display:block; font-size:.72rem;
+  color:var(--mint); margin-top:8px;
+  letter-spacing:.05em; font-weight:500;
+}
+
+@keyframes fadeUp{
+  from{ opacity:0; transform:translateY(24px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+@keyframes floatY{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-14px); }
+}
+@keyframes floatY2{
+  0%,100%{ transform:translateY(0) rotate(-1deg); }
+  50%{ transform:translateY(-12px) rotate(1.5deg); }
+}
+
+/* Curved divider at bottom of hero */
+.hero-curve{
+  position:absolute; bottom:-2px; left:0; right:0;
+  z-index:4; line-height:0; pointer-events:none;
+}
+.hero-curve svg{ width:100%; height:auto; display:block; }
+
+/* ============================================
+   TRUST BAR
+=============================================== */
+.trust-bar{
+  background:var(--moss); padding:38px 0;
+  color:var(--ivory); overflow:hidden;
+  position:relative;
+}
+.trust-bar::before{
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(circle at 20% 50%, rgba(212,232,220,.08), transparent 50%);
+  pointer-events:none;
+}
+.trust-bar .wrap{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:40px; flex-wrap:wrap;
+  position:relative; z-index:2;
+}
+.trust-bar-item{
+  display:flex; align-items:center; gap:12px;
+  font-size:.88rem; opacity:.9;
+}
+.trust-bar-item i{
+  color:var(--mint); font-size:1.05rem;
+  width:36px; height:36px; border-radius:50%;
+  background:rgba(212,232,220,.12);
+  display:flex; align-items:center; justify-content:center;
+  transition:all .3s var(--ease);
+}
+.trust-bar-item:hover i{
+  background:var(--mint); color:var(--moss);
+  transform:rotate(-8deg) scale(1.05);
+}
+
+/* ============================================
+   SECTION HEAD
+=============================================== */
+.eyebrow{
+  display:inline-flex; align-items:center; gap:10px;
+  font-size:.75rem; letter-spacing:.06em; font-weight:600;
+  color:var(--terracotta); text-transform:uppercase;
+  padding:7px 16px; background:var(--terracotta-soft);
+  border-radius:var(--radius-pill); margin-bottom:22px;
+}
+.eyebrow.centered{ justify-content:center; }
+.eyebrow.mint{
+  color:var(--moss); background:var(--mint);
+}
+
+.section-head{ max-width:680px; margin-bottom:60px; }
+.section-head h2{
+  font-size:clamp(1.9rem, 3.4vw, 3rem);
+  font-weight:400; letter-spacing:-0.025em;
+  line-height:1.12; color:var(--moss);
+}
+.section-head h2 em{
+  font-style:italic; font-weight:500;
+  color:var(--terracotta);
+}
+.section-head p{
+  color:var(--muted); font-size:1.02rem; line-height:1.75;
+  margin-top:20px; max-width:600px;
+}
+.section-head.center{ margin-inline:auto; text-align:center; }
+.section-head.center p{ margin-inline:auto; }
+
+/* ============================================
+   ABOUT — Enhanced with editorial split
+=============================================== */
+.about-section{ padding:130px 0; background:var(--ivory); position:relative; overflow:hidden; }
+.about-section::before{
+  content:''; position:absolute;
+  top:10%; right:-15%; width:400px; height:400px;
+  background:radial-gradient(circle, var(--mint-soft) 0%, transparent 70%);
+  border-radius:50%; filter:blur(40px); pointer-events:none;
+}
+.about-grid{
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:90px; align-items:center;
+  position:relative; z-index:2;
+}
+
+/* Layered visual */
+.about-visual{ position:relative; height:640px; }
+
+.about-image-main{
+  position:absolute; top:0; right:0;
+  width:82%; height:78%;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  box-shadow:var(--shadow-xl);
+  z-index:2;
+}
+.about-image-main img{
+  width:100%; height:100%; object-fit:cover;
+  transition:transform 1s var(--ease-out);
+}
+.about-visual:hover .about-image-main img{ transform:scale(1.04); }
+
+.about-image-small{
+  position:absolute; bottom:0; left:0;
+  width:48%; height:44%;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  border:8px solid var(--ivory);
+  box-shadow:var(--shadow-lg);
+  z-index:3;
+}
+.about-image-small img{ width:100%; height:100%; object-fit:cover; }
+
+/* Floating card with stats */
+.about-card{
+  position:absolute; top:8%; left:-6%;
+  background:var(--moss); color:var(--ivory);
+  padding:24px 26px; border-radius:var(--radius);
+  box-shadow:var(--shadow-xl);
+  z-index:4;
+  animation:floatY 5s ease-in-out infinite;
+}
+.about-card .num{
+  font-family:var(--font-display); font-size:2.4rem;
+  font-weight:500; font-style:italic;
+  color:var(--mint); line-height:1;
+  margin-bottom:6px;
+}
+.about-card .label{
+  font-size:.75rem; letter-spacing:.06em;
+  color:rgba(253,252,248,.75); font-weight:500;
+}
+
+/* Decorative shape */
+.about-shape{
+  position:absolute; top:-30px; left:-30px;
+  width:120px; height:120px;
+  background:var(--mint); border-radius:50%;
+  z-index:1;
+}
+.about-shape-2{
+  position:absolute; bottom:-40px; right:-40px;
+  width:160px; height:160px;
+  background:var(--terracotta-soft);
+  border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;
+  z-index:1;
+  opacity:.7;
+  animation:blobSpin 25s linear infinite;
+}
+
+/* Copy side */
+.about-copy .section-head{ margin-bottom:40px; }
+
+/* Numbered features — editorial */
+.about-features{ display:grid; gap:0; margin-bottom:40px; }
+.about-feature{
+  display:grid; grid-template-columns:70px 1fr;
+  gap:24px; padding:26px 0;
+  border-bottom:1px solid var(--line);
+  transition:all .4s var(--ease);
+  cursor:pointer;
+}
+.about-feature:first-child{ border-top:1px solid var(--line); }
+.about-feature:hover{ padding-left:14px; }
+.about-feature-num{
+  font-family:var(--font-display); font-style:italic;
+  font-size:1.5rem; color:var(--terracotta);
+  font-weight:500; line-height:1;
+}
+.about-feature h4{
+  font-size:1.15rem; font-weight:500;
+  margin-bottom:6px; color:var(--moss);
+  transition:color .3s;
+}
+.about-feature:hover h4{ color:var(--terracotta); }
+.about-feature p{
+  color:var(--muted); font-size:.94rem; line-height:1.65;
+}
+
+/* ============================================
+   SERVICES — Enhanced with hover reveal
+=============================================== */
+.services{
+  padding:130px 0; background:var(--cream);
+  position:relative; overflow:hidden;
+}
+.services::before{
+  content:''; position:absolute;
+  top:-10%; left:-5%; width:500px; height:500px;
+  background:radial-gradient(circle, var(--mint-soft) 0%, transparent 70%);
+  border-radius:50%; filter:blur(30px);
+  pointer-events:none;
+}
+.services .wrap{ position:relative; z-index:2; }
+
+.services-grid{
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;
+}
+.service-card{
+  background:var(--ivory); padding:40px 34px;
+  border-radius:var(--radius-lg);
+  transition:all .5s var(--ease);
+  position:relative; overflow:hidden;
+  border:1px solid transparent;
+  display:flex; flex-direction:column;
+  min-height:340px;
+}
+.service-card::before{
+  content:''; position:absolute;
+  top:-60px; right:-60px; width:180px; height:180px;
+  background:var(--mint-glow); border-radius:50%;
+  transition:all .7s var(--ease-out);
+}
+.service-card::after{
+  content:''; position:absolute;
+  bottom:0; left:0; right:0; height:4px;
+  background:linear-gradient(90deg, var(--terracotta), var(--sage));
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .6s var(--ease-out);
+}
+.service-card:hover::before{
+  transform:scale(2.2);
+  background:var(--mint);
+}
+.service-card:hover::after{ transform:scaleX(1); }
+.service-card:hover{
+  transform:translateY(-8px);
+  box-shadow:var(--shadow-xl);
+}
+.service-card > *{ position:relative; z-index:1; }
+
+.service-icon{
+  width:64px; height:64px; border-radius:18px;
+  background:var(--mint); color:var(--moss);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.5rem; margin-bottom:28px;
+  transition:all .5s var(--ease);
+  box-shadow:0 8px 20px rgba(47,74,60,.08);
+}
+.service-card:hover .service-icon{
+  background:var(--moss); color:var(--mint);
+  transform:rotate(-8deg) scale(1.08);
+}
+.service-card h3{
+  font-size:1.3rem; font-weight:500;
+  margin-bottom:14px; color:var(--moss);
+  letter-spacing:-0.015em;
+}
+.service-card p{
+  color:var(--muted); font-size:.94rem; line-height:1.7;
+  margin-bottom:24px; flex:1;
+}
+.service-card .arrow-link{ font-size:.85rem; align-self:flex-start; }
+
+/* ============================================
+   WHY CHOOSE US — New editorial section
+=============================================== */
+.why-section{
+  padding:130px 0; background:var(--ivory);
+  position:relative; overflow:hidden;
+}
+.why-section::before{
+  content:''; position:absolute;
+  top:20%; right:-10%; width:500px; height:500px;
+  background:radial-gradient(circle, var(--terracotta-soft) 0%, transparent 70%);
+  border-radius:50%; filter:blur(50px); opacity:.4;
+  pointer-events:none;
+}
+.why-layout{
+  display:grid; grid-template-columns:1fr 1.15fr;
+  gap:90px; align-items:center;
+  position:relative; z-index:2;
+}
+.why-image{
+  position:relative; height:600px;
+}
+.why-image-wrap{
+  position:absolute; inset:0;
+  border-radius:50% 50% 50% 50% / 55% 55% 45% 45%;
+  overflow:hidden;
+  box-shadow:var(--shadow-xl);
+}
+.why-image-wrap img{ width:100%; height:100%; object-fit:cover; }
+
+.why-badge{
+  position:absolute; bottom:-20px; right:-20px;
+  background:var(--terracotta); color:var(--ivory);
+  padding:24px 28px; border-radius:var(--radius);
+  box-shadow:var(--shadow-xl);
+  text-align:center;
+  z-index:3;
+  animation:floatY 5s ease-in-out infinite;
+}
+.why-badge .num{
+  font-family:var(--font-display); font-size:2.6rem;
+  font-weight:500; font-style:italic; line-height:1;
+  color:var(--ivory); margin-bottom:4px;
+}
+.why-badge .label{
+  font-size:.7rem; letter-spacing:.15em;
+  text-transform:uppercase; font-weight:500;
+  color:rgba(253,252,248,.85);
+}
+
+.why-list{ display:grid; gap:0; }
+.why-item{
+  display:grid; grid-template-columns:60px 1fr;
+  gap:24px; padding:30px 0;
+  border-bottom:1px solid var(--line);
+  transition:all .4s var(--ease);
+}
+.why-item:first-child{ border-top:1px solid var(--line); }
+.why-item:hover{ padding-left:14px; }
+.why-item-num{
+  width:48px; height:48px; border-radius:14px;
+  background:var(--mint); color:var(--moss);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-display); font-style:italic;
+  font-size:1.15rem; font-weight:500;
+  transition:all .4s var(--ease);
+}
+.why-item:hover .why-item-num{
+  background:var(--terracotta); color:var(--ivory);
+  transform:rotate(-8deg) scale(1.05);
+}
+.why-item h4{
+  font-size:1.2rem; font-weight:500;
+  margin-bottom:6px; color:var(--moss);
+}
+.why-item p{
+  color:var(--muted); font-size:.94rem; line-height:1.7;
+}
+
+/* ============================================
+   PROCESS — Enhanced
+=============================================== */
+.process{
+  padding:130px 0; background:var(--moss);
+  color:var(--ivory); position:relative; overflow:hidden;
+}
+.process::before{
+  content:''; position:absolute;
+  top:-20%; right:-10%; width:600px; height:600px;
+  background:radial-gradient(circle, rgba(212,232,220,.12), transparent 65%);
+  border-radius:50%; pointer-events:none;
+}
+.process::after{
+  content:''; position:absolute;
+  bottom:-15%; left:-5%; width:400px; height:400px;
+  background:radial-gradient(circle, rgba(216,155,124,.08), transparent 70%);
+  border-radius:50%; pointer-events:none;
+}
+.process .wrap{ position:relative; z-index:2; }
+.process .section-head h2{ color:var(--ivory); }
+.process .section-head h2 em{ color:var(--mint); }
+.process .section-head p{ color:rgba(253,252,248,.7); }
+.process .eyebrow{
+  background:rgba(212,232,220,.15); color:var(--mint);
+}
+
+.process-grid{
+  display:grid; grid-template-columns:repeat(4, 1fr); gap:20px;
+  position:relative;
+}
+/* Connect line */
+.process-grid::before{
+  content:''; position:absolute;
+  top:58px; left:8%; right:8%; height:2px;
+  background:repeating-linear-gradient(90deg, rgba(212,232,220,.3) 0 8px, transparent 8px 16px);
+  z-index:0;
+}
+.process-step{
+  padding:34px 26px;
+  background:rgba(253,252,248,.05);
+  border:1px solid rgba(212,232,220,.15);
+  border-radius:var(--radius);
+  transition:all .5s var(--ease);
+  position:relative; z-index:1;
+  backdrop-filter:blur(4px);
+}
+.process-step:hover{
+  background:rgba(212,232,220,.1);
+  transform:translateY(-6px);
+  border-color:rgba(212,232,220,.35);
+  box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+.process-num{
+  width:56px; height:56px; border-radius:50%;
+  background:var(--mint); color:var(--moss);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-display); font-weight:600;
+  font-size:1.15rem; margin-bottom:24px;
+  transition:all .5s var(--ease);
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+.process-step:hover .process-num{
+  background:var(--terracotta); color:var(--ivory);
+  transform:scale(1.1) rotate(-8deg);
+}
+.process-step h4{
+  color:var(--ivory); font-size:1.15rem;
+  font-weight:500; margin-bottom:12px;
+  letter-spacing:-0.01em;
+}
+.process-step p{
+  color:rgba(253,252,248,.6); font-size:.92rem; line-height:1.7;
+}
+
+/* ============================================
+   TESTIMONIAL — Enhanced with card
+=============================================== */
+.testimonial{
+  padding:130px 0; background:var(--cream);
+  position:relative; overflow:hidden;
+}
+.testimonial::before{
+  content:''; position:absolute;
+  top:10%; left:-10%; width:400px; height:400px;
+  background:radial-gradient(circle, var(--mint) 0%, transparent 65%);
+  border-radius:50%; filter:blur(40px); opacity:.6;
+  pointer-events:none;
+}
+.testimonial .wrap{ position:relative; z-index:2; }
+
+.testimonial-inner{
+  max-width:940px; margin:0 auto;
+  background:var(--ivory); padding:80px 70px;
+  border-radius:var(--radius-lg);
+  position:relative; text-align:center;
+  box-shadow:var(--shadow-xl);
+  overflow:hidden;
+}
+.testimonial-inner::before{
+  content:''; position:absolute;
+  top:-80px; right:-80px; width:240px; height:240px;
+  background:var(--mint-soft); border-radius:50%;
+  z-index:0;
+}
+.testimonial-inner::after{
+  content:''; position:absolute;
+  bottom:-60px; left:-60px; width:180px; height:180px;
+  background:var(--terracotta-soft); border-radius:50%;
+  opacity:.4; z-index:0;
+}
+.testimonial-inner > *{ position:relative; z-index:1; }
+
+.testimonial-quote-mark{
+  font-family:var(--font-display); font-size:5rem;
+  line-height:.7; color:var(--mint);
+  margin-bottom:20px; display:block;
+  font-style:italic;
+}
+.testimonial-stars{
+  display:flex; justify-content:center; gap:4px;
+  color:var(--terracotta); margin-bottom:26px;
+  font-size:1rem;
+}
+.testimonial-quote{
+  font-family:var(--font-display);
+  font-size:clamp(1.35rem, 2.4vw, 1.9rem);
+  line-height:1.45; color:var(--moss);
+  font-weight:400; font-style:italic;
+  letter-spacing:-0.015em;
+  margin-bottom:40px;
+}
+.testimonial-quote em{ color:var(--terracotta); font-weight:500; }
+.testimonial-author{
+  display:flex; align-items:center; justify-content:center;
+  gap:16px;
+}
+.testimonial-author img{
+  width:60px; height:60px; border-radius:50%;
+  object-fit:cover; border:3px solid var(--mint);
+}
+.testimonial-author-info{ text-align:left; }
+.testimonial-author-info h5{
+  font-family:var(--font-body); font-size:.95rem;
+  font-weight:600; color:var(--moss); letter-spacing:-0.005em;
+  margin-bottom:2px;
+}
+.testimonial-author-info span{
+  font-size:.8rem; color:var(--muted);
+}
+
+/* ============================================
+   CTA — Enhanced with curve
+=============================================== */
+.cta-section{
+  padding:100px 0 130px;
+  background:var(--ivory);
+  position:relative;
+}
+.cta-card{
+  background:linear-gradient(135deg, var(--mint-soft), var(--mint));
+  border-radius:var(--radius-lg);
+  padding:80px 70px;
+  position:relative; overflow:hidden;
+  display:grid; grid-template-columns:1.4fr 1fr;
+  gap:60px; align-items:center;
+  box-shadow:var(--shadow-lg);
+}
+.cta-card::before{
+  content:''; position:absolute;
+  bottom:-100px; right:-80px; width:340px; height:340px;
+  background:radial-gradient(circle, var(--terracotta-soft), transparent 70%);
+  border-radius:50%; opacity:.7;
+}
+.cta-card::after{
+  content:''; position:absolute;
+  top:-120px; left:-100px; width:280px; height:280px;
+  background:radial-gradient(circle, rgba(143,166,142,.5), transparent 70%);
+  border-radius:50%;
+}
+.cta-content{ position:relative; z-index:2; }
+.cta-content h2{
+  font-size:clamp(1.9rem, 3.4vw, 2.8rem);
+  font-weight:400; letter-spacing:-0.025em;
+  line-height:1.12; color:var(--moss);
+  margin-bottom:22px;
+}
+.cta-content h2 em{ font-style:italic; font-weight:500; color:var(--terracotta); }
+.cta-content p{
+  color:var(--moss); opacity:.75; font-size:1.02rem;
+  line-height:1.7; margin-bottom:34px; max-width:480px;
+}
+.cta-actions{ display:flex; gap:14px; flex-wrap:wrap; position:relative; z-index:2; }
+
+.cta-visual{
+  position:relative; z-index:2;
+  display:flex; align-items:center; justify-content:center;
+}
+.cta-circle{
+  width:230px; height:230px; border-radius:50%;
+  background:var(--moss); color:var(--ivory);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:20px;
+  position:relative;
+  transition:transform .5s var(--ease);
+  box-shadow:var(--shadow-xl);
+}
+.cta-circle:hover{ transform:scale(1.05); }
+.cta-circle::before{
+  content:''; position:absolute; inset:-18px;
+  border:2px dashed rgba(47,74,60,.3);
+  border-radius:50%;
+  animation:blobSpin 40s linear infinite;
+}
+.cta-circle span:first-child{
+  font-family:var(--font-display); font-size:2.8rem;
+  font-weight:500; line-height:1; font-style:italic;
+  color:var(--mint); margin-bottom:6px;
+}
+.cta-circle span:last-child{
+  font-size:.72rem; letter-spacing:.15em;
+  text-transform:uppercase; font-weight:500;
+  color:rgba(253,252,248,.75);
+}
+
+/* ============================================
+   FOOTER — Enhanced
+=============================================== */
+footer{
+  background:var(--moss); color:rgba(253,252,248,.65);
+  padding:90px 0 0;
+  border-radius:var(--radius-lg) var(--radius-lg) 0 0;
+  position:relative; overflow:hidden;
+}
+footer::before{
+  content:''; position:absolute;
+  top:-30%; right:-10%; width:600px; height:600px;
+  background:radial-gradient(circle, rgba(212,232,220,.08), transparent 65%);
+  border-radius:50%; pointer-events:none;
+}
+footer .wrap{ position:relative; z-index:2; }
+.footer-top{
+  display:grid; grid-template-columns:1.5fr 1fr 1fr 1.3fr;
+  gap:50px; padding-bottom:60px;
+  border-bottom:1px solid rgba(212,232,220,.12);
+}
+.footer-brand .logo{ color:var(--ivory); margin-bottom:20px; }
+.footer-brand .logo em{ color:var(--mint); }
+.footer-brand .logo-mark{ background:var(--mint); color:var(--moss); }
+.footer-brand p{
+  font-size:.92rem; line-height:1.7; max-width:300px;
+  color:rgba(253,252,248,.55);
+  margin-bottom:24px;
+}
+.footer-col h5{
+  color:var(--ivory); font-family:var(--font-body);
+  font-size:.72rem; font-weight:600; letter-spacing:.15em;
+  text-transform:uppercase; margin-bottom:22px;
+}
+.footer-col ul li{ margin-bottom:12px; }
+.footer-col ul a{
+  font-size:.9rem; transition:all .3s;
+  color:rgba(253,252,248,.65);
+  display:inline-flex; align-items:center; gap:8px;
+}
+.footer-col ul a::before{
+  content:''; width:0; height:1px;
+  background:var(--mint); transition:width .3s;
+}
+.footer-col ul a:hover{ color:var(--mint); }
+.footer-col ul a:hover::before{ width:12px; }
+
+.footer-newsletter p{
+  font-size:.9rem; margin-bottom:18px;
+  color:rgba(253,252,248,.6); line-height:1.65;
+}
+.footer-newsletter form{
+  display:flex; align-items:center; gap:8px;
+  background:rgba(212,232,220,.1);
+  border-radius:var(--radius-pill);
+  padding:6px 6px 6px 22px;
+  border:1px solid rgba(212,232,220,.15);
+  transition:all .3s var(--ease);
+}
+.footer-newsletter form:focus-within{
+  border-color:var(--mint);
+  background:rgba(212,232,220,.15);
+}
+.footer-newsletter input{
+  flex:1; background:none; border:none;
+  color:var(--ivory); font-family:var(--font-body);
+  font-size:.88rem; outline:none; padding:8px 0;
+}
+.footer-newsletter input::placeholder{ color:rgba(253,252,248,.4); }
+.footer-newsletter button{
+  width:40px; height:40px; border-radius:50%;
+  background:var(--mint); color:var(--moss);
+  display:flex; align-items:center; justify-content:center;
+  font-size:.85rem; transition:all .3s var(--ease);
+}
+.footer-newsletter button:hover{ background:var(--terracotta); color:var(--ivory); transform:rotate(-15deg); }
+
+.footer-socials{ display:flex; gap:10px; margin-top:0; }
+.footer-socials a{
+  width:40px; height:40px; border-radius:50%;
+  background:rgba(212,232,220,.1);
+  border:1px solid rgba(212,232,220,.15);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--ivory); font-size:.85rem;
+  transition:all .35s var(--ease);
+}
+.footer-socials a:hover{
+  background:var(--mint); color:var(--moss);
+  border-color:var(--mint); transform:translateY(-3px);
+}
+
+.footer-bottom{
+  display:flex; justify-content:space-between;
+  align-items:center; padding:28px 0;
+  font-size:.82rem; flex-wrap:wrap; gap:12px;
+  color:rgba(253,252,248,.4);
+}
+.footer-bottom a{ color:var(--mint); }
+.footer-bottom a:hover{ color:var(--terracotta-soft); }
+
+/* ============================================
+   SCROLL TOP
+=============================================== */
+.scroll-top{
+  position:fixed; right:24px; bottom:24px;
+  width:50px; height:50px; border-radius:50%;
+  background:var(--moss); color:var(--mint);
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; opacity:0; visibility:hidden;
+  transform:translateY(12px);
+  transition:all .4s var(--ease);
+  z-index:900; font-size:.9rem;
+  box-shadow:var(--shadow-lg);
+}
+.scroll-top.show{ opacity:1; visibility:visible; transform:translateY(0); }
+.scroll-top:hover{ background:var(--terracotta); color:var(--ivory); }
+
+/* ============================================
+   RESPONSIVE
+=============================================== */
+@media(max-width:1100px){
+  .hero-grid{ grid-template-columns:1fr; gap:60px; }
+  .hero-visual{ height:540px; max-width:520px; margin:0 auto; }
+  .about-grid{ grid-template-columns:1fr; gap:60px; }
+  .about-visual{ height:520px; max-width:520px; margin:0 auto; }
+  .why-layout{ grid-template-columns:1fr; gap:60px; }
+  .why-image{ height:500px; max-width:520px; margin:0 auto; }
+  .services-grid{ grid-template-columns:repeat(2, 1fr); }
+  .process-grid{ grid-template-columns:repeat(2, 1fr); }
+  .process-grid::before{ display:none; }
+  .cta-card{ grid-template-columns:1fr; gap:40px; padding:60px 50px; }
+  .cta-visual{ justify-content:flex-start; }
+  .footer-top{ grid-template-columns:1fr 1fr; row-gap:40px; }
+}
+
+@media(max-width:900px){
+  nav.main-nav, .header-right .btn{ display:none; }
+  .burger{ display:flex; }
+}
+
+@media(max-width:768px){
+  .wrap{ padding:0 24px; }
+  .hero{ padding:120px 0 0; min-height:auto; }
+  .hero-visual{ height:440px; }
+  .hero-image-main{ width:82%; height:74%; }
+  .hero-image-secondary{ width:56%; height:48%; }
+  .hero-badge{ right:-10px; padding:14px 18px; }
+  .hero-badge-icon{ width:38px; height:38px; font-size:.85rem; }
+  .hero-badge-text strong{ font-size:.95rem; }
+  .hero-badge-2{ left:-10px; padding:14px 18px; max-width:180px; }
+  .hero-stats{ gap:24px; }
+  .hero-stat span:first-child{ font-size:1.6rem; }
+
+  .about-section, .services, .why-section,
+  .process, .testimonial, .cta-section{ padding:90px 0; }
+
+  .about-visual, .why-image{ height:460px; }
+  .about-card{ padding:18px 20px; top:6%; left:-4%; }
+  .about-card .num{ font-size:1.8rem; }
+  .about-image-main{ width:85%; height:76%; }
+  .about-image-small{ width:52%; height:42%; }
+  .why-badge{ padding:18px 22px; }
+  .why-badge .num{ font-size:2rem; }
+
+  .services-grid{ grid-template-columns:1fr; }
+  .service-card{ min-height:auto; }
+  .process-grid{ grid-template-columns:1fr; gap:16px; }
+
+  .testimonial-inner{ padding:56px 32px; }
+  .testimonial-quote-mark{ font-size:3.5rem; }
+
+  .cta-card{ padding:50px 34px; }
+  .cta-circle{ width:170px; height:170px; }
+  .cta-circle span:first-child{ font-size:2rem; }
+
+  .footer-top{ grid-template-columns:1fr; gap:40px; }
+  .footer-bottom{ justify-content:center; text-align:center; }
+
+  .trust-bar .wrap{ justify-content:center; gap:20px; }
+  .trust-bar-item{ font-size:.8rem; }
+  .trust-bar-item i{ width:32px; height:32px; font-size:.9rem; }
+}
+
+@media(max-width:520px){
+  .wrap{ padding:0 20px; }
+  .hero-title{ font-size:2.2rem; }
+  .hero-cta .btn{ padding:14px 24px; font-size:.8rem; }
+  .hero-visual{ height:380px; }
+  .hero-badge{ position:relative; top:auto; right:auto; margin:16px 0 0; width:fit-content; animation:none; }
+  .hero-badge-2{ position:relative; bottom:auto; left:auto; margin:14px 0 0; width:fit-content; animation:none; max-width:100%; }
+  .cta-actions .btn{ width:100%; justify-content:center; }
+  .cta-circle{ width:150px; height:150px; }
+  .testimonial-quote{ font-size:1.15rem; }
+  .testimonial-inner{ padding:44px 24px; }
+  .about-visual, .why-image{ height:400px; }
+  .about-feature{ grid-template-columns:48px 1fr; gap:16px; }
+  .about-feature-num{ font-size:1.2rem; }
+  .why-item{ grid-template-columns:48px 1fr; gap:16px; }
+  .why-item-num{ width:42px; height:42px; font-size:1rem; }
+  .hero-leaf{ display:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="siteHeader">
+  <div class="wrap">
+    <a href="index.html" class="logo">
+      <span class="logo-mark"><i class="fa-solid fa-leaf"></i></span>
+      <span>Mint <em>&amp;</em> Moss</span>
+    </a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <span class="icon-btn"><i class="fa-solid fa-phone"></i></span>
+      <a href="contact.html" class="btn"><span>Book Visit</span></a>
+      <div class="burger" id="burgerBtn"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-close" id="mobileClose"><i class="fa-solid fa-xmark"></i></div>
+  <a href="index.html" class="active">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn" style="margin-top:16px;"><span>Book a Visit</span></a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <!-- Background blobs -->
+  <div class="hero-bg-blob blob-1"></div>
+  <div class="hero-bg-blob blob-2"></div>
+  <div class="hero-bg-blob blob-3"></div>
+
+  <!-- Floating leaves -->
+  <i class="fa-solid fa-leaf hero-leaf l-1"></i>
+  <i class="fa-solid fa-seedling hero-leaf l-2"></i>
+  <i class="fa-solid fa-leaf hero-leaf l-3"></i>
+  <i class="fa-solid fa-seedling hero-leaf l-4"></i>
+
+  <div class="wrap">
+    <div class="hero-grid">
+
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="dot"></span>
+          Now accepting new patients
+        </div>
+        <h1 class="hero-title">
+          Gentle dental care,<br>
+          <em class="underline-squiggle">naturally</em> yours.
+        </h1>
+        <p class="hero-text">
+          A wellness-focused dental studio where modern dentistry meets
+          calm, unhurried care — for adults, families, and anyone who's ever
+          felt nervous about the chair.
+        </p>
+        <div class="hero-cta">
+          <a href="contact.html" class="btn"><span>Book a Visit</span> <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="services.html" class="btn-outline btn"><span>Explore Services</span></a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span>12<em>+</em></span>
+            <span>Years of Care</span>
+          </div>
+          <div class="hero-stat">
+            <span>4.9<em>/5</em></span>
+            <span>Patient Rating</span>
+          </div>
+          <div class="hero-stat">
+            <span>3k<em>+</em></span>
+            <span>Happy Smiles</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-circle"></div>
+        <div class="hero-image-main">
+          <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1000&q=80" alt="Calm dental studio">
+        </div>
+        <div class="hero-image-secondary">
+          <img src="https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=700&q=80" alt="Dental care detail">
+        </div>
+        <div class="hero-badge">
+          <div class="hero-badge-icon"><i class="fa-solid fa-star"></i></div>
+          <div class="hero-badge-text">
+            <strong>4.9 / 5</strong>
+            <span>620+ reviews</span>
+          </div>
+        </div>
+        <div class="hero-badge-2">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <span>"The gentlest dentist I've ever seen."</span>
+          <strong>— Priya S., Patient</strong>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Curved divider -->
+  <div class="hero-curve">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#2F4A3C"/>
+    </svg>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="wrap">
+    <div class="trust-bar-item"><i class="fa-solid fa-tooth"></i> General &amp; Preventive</div>
+    <div class="trust-bar-item"><i class="fa-solid fa-wand-magic-sparkles"></i> Cosmetic Dentistry</div>
+    <div class="trust-bar-item"><i class="fa-solid fa-seedling"></i> Holistic Approach</div>
+    <div class="trust-bar-item"><i class="fa-solid fa-user-doctor"></i> Family-Friendly</div>
+    <div class="trust-bar-item"><i class="fa-solid fa-shield-heart"></i> Anxiety-Friendly</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-section">
+  <div class="wrap">
+    <div class="about-grid">
+
+      <div class="about-visual" data-aos="fade-right">
+        <div class="about-shape"></div>
+        <div class="about-shape-2"></div>
+        <div class="about-image-main">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80" alt="Mint & Moss dental studio interior">
+        </div>
+        <div class="about-image-small">
+          <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=600&q=80" alt="Dental care detail">
+        </div>
+        <div class="about-card">
+          <div class="num">12+</div>
+          <div class="label">Years of gentle care</div>
+        </div>
+      </div>
+
+      <div class="about-copy" data-aos="fade-left">
+        <div class="section-head" style="margin-bottom:40px;">
+          <div class="eyebrow mint">Our Philosophy</div>
+          <h2>Dentistry that feels <em>like a breath of fresh air</em>.</h2>
+          <p>
+            Mint &amp; Moss was founded on a simple idea: dental visits shouldn't
+            feel clinical, rushed, or scary. We've built a studio where the pace
+            is calm, the materials are gentle, and the team actually listens.
+          </p>
+        </div>
+
+        <div class="about-features">
+          <div class="about-feature" data-aos="fade-up">
+            <div class="about-feature-num">01.</div>
+            <div>
+              <h4>Gentle by design</h4>
+              <p>Anxiety-aware techniques, modern numbing, and unrushed appointments.</p>
+            </div>
+          </div>
+          <div class="about-feature" data-aos="fade-up" data-aos-delay="80">
+            <div class="about-feature-num">02.</div>
+            <div>
+              <h4>Considered materials</h4>
+              <p>BPA-free composites, mercury-free fillings, and low-radiation digital imaging.</p>
+            </div>
+          </div>
+          <div class="about-feature" data-aos="fade-up" data-aos-delay="160">
+            <div class="about-feature-num">03.</div>
+            <div>
+              <h4>Everyone's welcome</h4>
+              <p>Adults, teens, kids — our whole team is trained for every age and stage.</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="about.html" class="arrow-link">
+          <span>Read the full story</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <div class="wrap">
+    <div class="section-head center" data-aos="fade-up">
+      <div class="eyebrow centered">What We Do</div>
+      <h2>Modern dentistry, <em>warmly delivered</em>.</h2>
+      <p>Six core services — from routine care to full smile makeovers — all offered in our calm, wellness-focused studio.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card" data-aos="fade-up">
+        <div class="service-icon"><i class="fa-solid fa-tooth"></i></div>
+        <h3>General Dentistry</h3>
+        <p>Checkups, cleaning, and preventive care designed to keep your smile healthy for life.</p>
+        <a href="services.html" class="arrow-link"><span>Learn more</span><i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <h3>Teeth Whitening</h3>
+        <p>Enamel-safe whitening that brightens your smile naturally, without sensitivity.</p>
+        <a href="services.html" class="arrow-link"><span>Learn more</span><i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="service-icon"><i class="fa-solid fa-teeth"></i></div>
+        <h3>Dental Implants</h3>
+        <p>Permanent, natural-looking tooth replacements placed with digital precision.</p>
+        <a href="services.html" class="arrow-link"><span>Learn more</span><i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="service-card" data-aos="fade-up">
+        <div class="service-icon"><i class="fa-solid fa-teeth-open"></i></div>
+        <h3>Braces &amp; Aligners</h3>
+        <p>Metal, ceramic, and clear aligner options to straighten teeth at any age.</p>
+        <a href="services.html" class="arrow-link"><span>Learn more</span><i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="service-icon"><i class="fa-solid fa-kit-medical"></i></div>
+        <h3>Root Canal Therapy</h3>
+        <p>Comfortable, single-visit endodontics to save your natural tooth and end the pain.</p>
+        <a href="services.html" class="arrow-link"><span>Learn more</span><i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="service-icon"><i class="fa-solid fa-child"></i></div>
+        <h3>Pediatric Dentistry</h3>
+        <p>Kid-friendly care that builds positive habits and happy dental memories.</p>
+        <a href="services.html" class="arrow-link"><span>Learn more</span><i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-section">
+  <div class="wrap">
+    <div class="why-layout">
+
+      <div class="why-image" data-aos="fade-right">
+        <div class="why-image-wrap">
+          <img src="https://images.unsplash.com/photo-1593022356769-11f762e25ed9?auto=format&fit=crop&w=1000&q=80" alt="Gentle dental care">
+        </div>
+        <div class="why-badge">
+          <div class="num">98%</div>
+          <div class="label">Would Recommend</div>
+        </div>
+      </div>
+
+      <div data-aos="fade-left">
+        <div class="section-head" style="margin-bottom:40px;">
+          <div class="eyebrow">Why Mint &amp; Moss</div>
+          <h2>Four reasons patients <em>keep coming back</em>.</h2>
+        </div>
+
+        <div class="why-list">
+          <div class="why-item">
+            <div class="why-item-num">i.</div>
+            <div>
+              <h4>Truly anxiety-friendly</h4>
+              <p>Longer appointments, gentle techniques, and a team trained to work with nervous patients.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-item-num">ii.</div>
+            <div>
+              <h4>Transparent pricing</h4>
+              <p>Clear quotes before we begin — no surprise bills, no upsells.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-item-num">iii.</div>
+            <div>
+              <h4>Family-first approach</h4>
+              <p>We treat every generation of your family, from toddlers to grandparents.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-item-num">iv.</div>
+            <div>
+              <h4>Considered materials</h4>
+              <p>BPA-free composites, mercury-free fillings, and low-radiation imaging as standard.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="wrap">
+    <div class="section-head center" data-aos="fade-up" style="margin-inline:auto;">
+      <div class="eyebrow centered">How It Works</div>
+      <h2>Your visit, <em>step by gentle step</em>.</h2>
+      <p>From your first phone call to your final review — here's exactly what to expect.</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step" data-aos="fade-up">
+        <div class="process-num">01</div>
+        <h4>Warm Welcome</h4>
+        <p>Comfortable lounge, herbal tea, and a short chat before we begin.</p>
+      </div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="80">
+        <div class="process-num">02</div>
+        <h4>Gentle Exam</h4>
+        <p>Low-radiation digital imaging and a thorough but unhurried check.</p>
+      </div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="160">
+        <div class="process-num">03</div>
+        <h4>Clear Plan</h4>
+        <p>Honest recommendations, transparent costs, and time for your questions.</p>
+      </div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="240">
+        <div class="process-num">04</div>
+        <h4>Comfortable Care</h4>
+        <p>Treatment delivered at your pace, with regular check-ins throughout.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial">
+  <div class="wrap">
+    <div class="testimonial-inner" data-aos="fade-up">
+      <span class="testimonial-quote-mark">"</span>
+      <div class="testimonial-stars">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+      </div>
+      <p class="testimonial-quote">
+        I put off going to the dentist for <em>years</em> because of anxiety.
+        Mint &amp; Moss was the first place that actually felt calm — I left
+        smiling, and I've been back every six months since.
+      </p>
+      <div class="testimonial-author">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="Patient">
+        <div class="testimonial-author-info">
+          <h5>Priya Sharma</h5>
+          <span>Patient since 2022</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="wrap">
+    <div class="cta-card" data-aos="zoom-in">
+      <div class="cta-content">
+        <div class="eyebrow mint" style="margin-bottom:22px;">Ready When You Are</div>
+        <h2>Book your first visit — <em>at your own pace</em>.</h2>
+        <p>No pressure, no judgment. Just a friendly chat and a gentle look. Bring your questions, and we'll bring the calm.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn"><span>Book a Visit</span> <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="gallery.html" class="btn-outline btn"><span>See Patient Stories</span></a>
+        </div>
+      </div>
+      <div class="cta-visual">
+        <a href="contact.html" class="cta-circle">
+          <span>Book</span>
+          <span>Your Visit</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-mark"><i class="fa-solid fa-leaf"></i></span>
+          <span>Mint <em>&amp;</em> Moss</span>
+        </a>
+        <p>A gentle, wellness-focused dental studio — for adults, families, and anyone who wants a kinder dental experience.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Studio</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html">General Dentistry</a></li>
+          <li><a href="services.html">Teeth Whitening</a></li>
+          <li><a href="services.html">Implants</a></li>
+          <li><a href="services.html">Pediatric Care</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h5>Stay In Touch</h5>
+        <p>Gentle tips and studio news. Occasional, never spammy.</p>
+        <form onsubmit="event.preventDefault(); this.reset(); alert('Thanks for subscribing!');">
+          <input type="email" placeholder="your@email.com" required>
+          <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Mint &amp; Moss Dental Co. All rights reserved.</span>
+      <span>Made with care, in Pune · <a href="#">Privacy</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="scroll-top" id="scrollTop"><i class="fa-solid fa-arrow-up"></i></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+AOS.init({ duration: 800, once: true, offset: 60, easing: 'ease-out-cubic' });
+
+const header = document.getElementById('siteHeader');
+const scrollTopBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 40);
+  scrollTopBtn.classList.toggle('show', window.scrollY > 500);
+});
+scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+const burger = document.getElementById('burgerBtn');
+const mobileNav = document.getElementById('mobileNav');
+const mobileClose = document.getElementById('mobileClose');
+burger.addEventListener('click', () => mobileNav.classList.add('open'));
+mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') mobileNav.classList.remove('open'); });
+
+const navLinks = document.querySelectorAll('nav.main-nav a, .mobile-nav a');
+function fileOf(url) {
+  let f = (url || '').split('#')[0].split('?')[0].split('/').pop().toLowerCase();
+  if (f === '' || f === 'home.html' || f === 'home') f = 'index.html';
+  return f;
+}
+function setActiveLink() {
+  const currentPage = fileOf(window.location.pathname);
+  navLinks.forEach(link => {
+    if (link.classList.contains('btn')) return;
+    link.classList.toggle('active', fileOf(link.getAttribute('href')) === currentPage);
+  });
+}
+window.addEventListener('DOMContentLoaded', setActiveLink);
+window.addEventListener('load', setActiveLink);
+</script>
+</body>
+</html>
